@@ -1,0 +1,169 @@
+
+It is evident that we need to calculate an infinite sum to evaluate the $\epsilon - \chi$ Nash equilibrium. It would be very useful if we can decide the existence of Nash Equilibrium by looking at sequences of sufficient length. \cite{MMS08} proposes an algorithm to find $\epsilon - \chi$ Nash Equilibrium with an arbitrary precision ($\delta$). We extend their algorithm such that it supports probabilistic systems. Following theorem shows the ability of verifying whether a mechanism is an $\epsilon - \chi$ Nash equilibrium. Initially, it calculates the sufficient path length $(k_i)$, based on the required precision $\delta$, discount factor $\beta$ and maximum absolute pay-off $M$. It then calculates  $\Delta_i(k_i)$ which is the maximum regret value of being rational after $k_i$ steps. Based on the value of $\Delta_i(k_i)$ we can decide on a range for the actual maximum regret value. If the range fits the precision $\delta$ we can decide that the mechanism has $\epsilon + \delta- \chi$ Nash equilibrium.
+
+
+\begin{theorem}
+	\label{thm : correctness}
+	Let $\mathbb{M} = (S,I,A,B,T,h,P,\beta)$ be an $n$ player mechanism, $\chi \in \{0,\cdots,n\}, \epsilon > 0$ and $\delta > 0$. for each agent $i \in [n]$ define, \\
+	\begin{enumerate}
+		\item $M_i$ = $max \{|h_i(s,a)| | s \in S$ and $a \in A\}$.
+		\item $e_i(k) = \beta_i^{k} \frac{M_i}{1-\beta_i}$.
+		\item $\Delta_i(k)=max\{v_i^{k}(Z \cup \{i\},s)- u_i^{k}(Z,s)|s\in I, Z \in \mathbb{P}_\chi([n]-\{i\}) \}$
+		\item $\epsilon_1(i,k) = \Delta_i(k) - 10e_i(k)$
+		\item $\epsilon_2(i,k) = \Delta_i(k) + 10e_i(k)$
+	\end{enumerate}
+	For each agent $i$, Define $k_i$ to be $4E_i(k_i) < \delta$\\
+	\begin{enumerate}
+		\item \text{if } $\forall i \in [n]$, $\epsilon \ge \epsilon_2(i,k_i) > 0$ then $M$ is $\epsilon-\chi-Nash$
+		\item \text{if } $\exists i \in [n]$ s.t., $0 < \epsilon \le \epsilon_1(i,k_i)$ then $M$ is not $\epsilon-\chi-Nash$ it can never be a $0-\chi-Nash$.
+		\item \text{if } $\forall i \in [n]$, $\epsilon_1(i,k_i) < \epsilon$ and $\exists j \in [n]$ s.t. $\epsilon < \epsilon_2(j,k_j)$ then $M$ is $(\epsilon + \delta)-\chi-Nash$.
+	\end{enumerate}
+\end{theorem}
+
+Though the proofs are presented in appendix, we can provide some intuitions for the proof here. We consider path trees in the probabilistic case instead of paths used in non-probabilistic case.
+For the definition of $\epsilon - \chi$ Nash equilibrium we need to determine a possible range for $v_i - u_i$ by looking at finite length execution paths trees of length $k$. For a given length $k$, we will be able to prove that $v_i - u_i$ lies between $\Delta_i(k) - 10e_i(k)$ and $\Delta_i(k) + 10e_i(k)$ where $\Delta_i(k)$ is the maximum regret value for player $i$ in $k$-length executions. We can see that if $\epsilon$ is greater than the maximum possible value for $v_i - u_i$ , $\Delta_i(k) + 10e_i(k)$  $\forall i$ the mechanism is obviously an $\epsilon - \chi$ Nash Equilibrium. If for some $i$, $\epsilon$ is less than the minimum possible value for  $v_i - u_i$, $\Delta_i(k) - 10e_i(k)$ the mechanism is obviously not an $\epsilon - \chi$ Nash Equilibrium. If $\epsilon$ lies in the possible range of $v_i - u_i$,  for some $i$ and $\epsilon$ is greater than the range for other $i$'s we cannot guarantee about $\epsilon - \chi$ Nash Equilibrium. We surely not that, if the range cannot be bound by $\epsilon$ it can be bounded by something larger than $\epsilon$. According to the choice of $k$, we can prove that, if $\epsilon$ is in the range, whole range is guaranteed to be bound by $\epsilon + \delta$ ($\delta$ is an upper bound for the size of the uncertainty range of $v_i - u_i$). \newline
+
+Now we can look into how the value of the uncertainty range is evaluated. First we evaluate $e_i(k)$ which is an upper bound for the absolute value of the truncation error introduced by considering the $k$-length path tree. For the rest of the proof, we use three kinds of path tree pay-offs namely, $v_i(\pi)$ , $v_i^{k}(\hat{\pi}_k)$ and $v_i^{k}(\pi \vert k)$ which correspond to pay-offs of infinite optimal path tree, $k$-optimal path tree and $k$-prefix of infinite optimal path tree respectively. For a given strategy $\sigma$, the absolute difference between payoffs for $k$-prefix of infinite optimal path tree and $k$-optimal path tree can be bounded by $2e_i(k)$. Similarly, absolute difference between payoffs for $k$-optimal path tree and infinite optimal path tree can be bounded by $3e_i(k)$. This proof follows from the triangle inequality which breaks down the said value to a summation of of two terms which match previously proven bounds. Final lemma determines the bound for the absolute difference between $k$-optimal and infinite optimal for the infinite optimal strategy and $k$-optimal strategy by a player. This lemma also follows from triangle inequality. Our final bound for absolute difference is $5e_i(k)$. This bound is for either $v_i$ or $u_i$. But, we need to calculate the error $\vert (v_i - u_i) - (v^{k}_i - u^{k}_i ) \vert$. By rearranging terms we arrive at,  $\vert (v_i - v^{k}_i) - (u_i - u^{k}_i ) \vert$ and triangle inequality, introduces the bound as $10e_i(k) = 5e_i(k) + 5e_i(k)$. Since the absolute difference is bounded by $10e_i(k)$, actual difference has a range of size $20e_i(k)$ which happens to be the guaranteed minimum shift to determine a bound for maximum actual regret value.
+
+
+\begin{algorithm}[H]
+	\caption{$CheckNash$(mechanism $\mathcal{M}$, int $\chi$, double $\epsilon$ , $\delta$)}
+	\label{checknash}
+	\begin{algorithmic}[1]
+		\FORALL{$i \in [n]$}
+			\STATE Let $k$, $20e_i(k) \leq \delta$
+			\STATE Let $s \in S$ and $Z \in \mathcal{P}([n]-\{i\})$
+			\STATE $v_{i}^{0}(Z,s) \leftarrow 0 ;  u_{i}^{0}(Z,s) \leftarrow 0 ;$
+			\FOR{$t$=1 to $k$}
+				\STATE	$v_{i}^{t+1}(Z \cup \{i\},s) \leftarrow
+%				I(i \in Z) i is rational
+				\{max _{a_i \in A_i(s)}$
+				$E_{a_{[n]-Z-\{i\}} \in A_{[n]-Z-\{i\}}(s)}$ \\
+				$min_{a_{Z} \in A_{Z}}$ 
+				$\{h_i(s,\langle a_{Z},a_{[n]-Z-\{i\}},a_{i} \rangle ) +$ $  \beta_i^{t}{v_i}^{t}(Z,s') | BT(Z,s,\langle a_{-i},a_i \rangle ,s')  \}\}
+				$\\
+%				$
+%				I(i \notin Z)
+%				\{E_{a_i \in A_i(s)}$\\ 
+%				$min_{a_{Z} \in A_{Z}(s)} $\\
+%				$E_{a_{[n]-Z-\{i\}} \in A_{[n]-Z-\{i\}}}$\\
+%				$\{h_i(s,<a_{[n]-Z-\{i\}},a_{Z},a_i>) +$\\$	\beta_i^{t}{v_i}^{t}(Z,s') | BT(Z \cup \{i\},s,<a_{-i},a_i>,s')  \} \}$
+				\STATE	$u_{i}^{t+1}(Z,s) \leftarrow
+%				I(i \in Z)\{min _{a_i \in A_i(s)}$\\ 
+%				$min_{a_{Z-\{i\}} \in A_{Z-\{i\}}} $\\
+%				$E_{a_{[n]-Z} \in A_{[n]-Z}(s)}$\\ 
+%				$\{h_i(s,<a_{z-\{i\}},a_i,a_{[n]-Z}>) +$\\$  \beta_i^{t}{u_i}^{t}(Z,s') | BT(Z,s,<a_{-i},a_i>,s')  \}\}
+%				+$\\$
+%				I(i \notin Z) i is always honest
+				\{E_{a_i \in A_i(s)}$
+				$min_{a_{Z} \in A_{Z}(s)} $ \\ $\{h_i(s,\langle a_{[n]-Z-\{i\}},a_{Z},a_i \rangle ) +$
+				$E_{a_{[n]-Z-\{i\}} \in A_{[n]-Z-\{i\}}}$
+				$	\beta_i^{t}{u_i}^{t}(Z,s') | BT(Z,s,\langle a_{-i},a_i \rangle,s')  \} \}$				
+			\ENDFOR
+%			\FOR{$t$=1 to $k$}
+%				\STATE $vp_{i}^{t+1}(Z,s_i)= E_{x \in PS(s_i)}(v_{i}^{k+1}(Z,x))$
+%				\STATE $up_{i}^{t+1}(Z,s_i)=E_{x \in PS(s_i)}(u_{i}^{k+1}(Z,x))$
+%			\ENDFOR
+			\STATE	 $\Delta_i \leftarrow$ max$\{v_i^{k}(Z \cup \{i\},s) - u_i^{k}(Z,s) | s \in I, Z \in \mathcal{P}_\chi([n] \ \{i\})  \}$
+			\STATE	 $\epsilon_1(i)  \leftarrow \Delta_i - 10e_i(k)$; $\epsilon_2(i)  \leftarrow \Delta_i + 10e_i(k)$
+			\IF{$\epsilon < \epsilon_1(i)$}
+				\RETURN FAIL
+			\ENDIF
+		\ENDFOR
+		\IF{$\forall i \in [n]$ ($\epsilon_2(i) < \epsilon$)}
+			\RETURN PASS with $\epsilon$
+		\ELSE
+			\RETURN PASS with ($\epsilon + \delta$)
+		\ENDIF
+	\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Explanation of the Algorithm}
+Firstly, we should know how Byzantine players are treated in the algorithm. As stated in section \ref{sec:mech} Byzantine players are also treated as rational players for the calculation of guaranteed values for Altruistic players. So the actions of the Byzantine players are always denoted as non deterministic while Altruistic players always have deterministic probabilistic actions. As a total system, the actions are non-deterministic in which the non-determinism is induced totally by Byzantine players.  
+
+First $4$ lines work on initialization of the algorithm for player $i$. It defines value $k$ which is the sufficient length for analysis by using $\delta$ and $e_i(k)$. $e_i(k)$ is defined in terms of maximum absolute pay-off $(M)$ and discount factor $(\beta)$. It also initializes the set of Byzantine players and the expected value (guaranteed and optimal) for player $i$, at any state after $0$ steps starting from that state. Line $6$ and $7$ iteratively calculates expected values for $t$ iterations starting from each state. After the loop execution we have successfully calculated expected values for $k$ length paths starting from any state. Line $9$ calculates the maximum difference between expected optimal value and expected guaranteed value, for $k$ length paths, starting from any initial state, for player $i$. Line $10$ defines a range for existence of actual incentive difference. Line $11$ says if the needed incentive difference $\epsilon$ is not in the range return $FAIL$. Line $15$ to $18$ follows from the result of Theorem \ref{thm : correctness}.  
+
+
+Correctness proof of the algorithm shows the correctness of dynamic programming definition and applies  the result of Theorem \ref{thm : correctness} for Nash equilibrium verification.
+
+\paragraph{Correctness of the dynamic programming definition}
+Since we have probabilistic strategies we do not always consider paths. We consider a path tree. We optimize expected value of the paths in the path tree.
+The original pay-off function for a horizon $t$ is \newline
+%$v_i^{k}(Z,s)=\max_{\sigma \in Strat_{k}(s,Z,i)}$\\
+%$\{\min_{\pi \in Path(s,Z,i,\sigma)}E_{\Pi_{t=0}^{k-1}A_{[n]-Z}(\pi^(s)(t))}(\Sigma_{t=0}^{k-1} \beta_i^{t}h_{i}(\pi^{s}(t),\pi^{s}(a)))\}$ \newline
+
+%$v_i^{k}(Z,s)= max_{\sigma \in Strat_{k}(s,Z,i)}\{min_{}  \} $
+%$v_i^{k}(Z,s)=E_{\pi'^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z}}(\Sigma_{t=0}^{k-1} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t)))$
+
+Let $\pi'^a$ be a path of length $k$.
+\begin{equation}
+\begin{split}
+v_i^{'k}(Z,s)=
+\begin{cases}
+k > 0 \wedge i \in Z \\
+max_{\pi'^{a}_{i} \in \Pi_{t=0}^{k-1} A_{i}}
+min_{\pi'^{a}_{[Z]-\{i\}} \in \Pi_{t=0}^{k-1} A_{[Z]-\{i\}}}
+\{\{E_{\pi'^{a}_{[n]-Z} \in \Pi_{t=0}^{k-1} A_{[n]-Z}}(\Sigma_{t=0}^{k-1} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t))) |\\ BT(Z,\pi'^{s}(t),\pi'^{a}(t),\pi'^{s}(t+1)) \wedge \pi'^{s}(0)=s \wedge |\pi'|=k\}\}\\
+k > 0 \wedge i \notin Z & \\
+E_{\pi'^{a}_{i} \in \Pi_{t=0}^{k-1} A_{i}}
+(min_{\pi'^{a}_{Z} \in \Pi_{t=0}^{k-1} A_{Z}}
+\{E_{\pi'^{a}_{[n]-Z-\{i\}} \in \Pi_{t=0}^{k-1} A_{[n]-Z-\{i\}}}
+(\Sigma_{t=0}^{k-1} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t))) |\\ BT(Z,\pi'^{s}(t),\pi'^{a}(t),\pi'^{s}(t+1)) \wedge \pi'^{s}(0)=s \wedge |\pi'|=k\})\\
+k = 0 & 0\\
+\end{cases}
+\end{split}
+\end{equation}
+
+We can use induction to prove that dynamic programming definition of $v_i^{k}(Z,s)$ also computes the same function. Induction is done on the path length $l$.\cite{MMS08} \newline
+
+\begin{theorem}
+	$v_i^{'k}(Z,s)=v_i^{k}(Z,s)$  $ \forall k \ge 0 $.
+\end{theorem}
+	
+
+\begin{proof}
+	For $k=0$ case the result is trivial because value of empty path is defined to be $0$. So the maximin path value is 0.
+	Substitute the original function value $(v_i^{'k}(Z,s))$ to compute $v_i^{k+1}(Z,s)$ in the dynamic programming definition. 
+	Let $i \in Z$, 
+	%let the new path set be $\{\pi'\}$ and the 
+	any path of length $k$  th iteration be $\pi$ and let $\{\pi\}$ be any infinite length probabilistic path starting from state $s$.
+%	$k$ corresponds to a length of $k+1$. $(k \geq 0)$
+%	$E_{A_{[n]-Z}(s)}(h(s,<a_i,a_{-i}>)+\beta_iv_i^{k}(Z,s'))=$\\
+%	$E_{A_{[n]-Z}(s)}(h(s,<a_i,a_{-i}>)+\beta_iE_{\pi^{a} \in \Pi_{t=0}^k A_{[n]-Z}}(\Sigma_{t=0}^{k} \beta_i^{t}h_{i}(\pi^{s}(t),\pi^{a}(t))))$\\
+%	$E_{A_{[n]-Z}(s)}(h(s,<a_i,a_{-i}>)) +$
+%	$ E_{A_{[n]-Z}(s)}(E_{\pi'^{a} \in \Pi_{t=1}^{k+1}A_{[n]-Z}}(\Sigma_{t=1}^{k+1} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t))))$\\
+%	$E_{\pi'^{a} \in \Pi_{t=0}^{k+1}A_{[n]-Z}}(h(s,<a_i,a_{-i}>)) +$
+%	$ E_{\pi'^{a} \in \Pi_{t=0}^{k+1} A_{[n]-Z}}(\Sigma_{t=1}^{k+1} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t)))$\\
+%	$E_{\pi'^{a} \in \Pi_{t=0}^{k+1} A_{[n]-Z}}(\Sigma_{t=0}^{k+1} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t)))$\\
+	
+	\begin{equation*}
+	\begin{aligned}[c]
+	E_{a_{[n]-Z} \in A_{[n]-Z}}(h(s,\langle a_i,a_{-i} \rangle)+\beta_iv_i^{k}(Z,s')
+	|BT(Z,s,\langle a_i,a_{-i} \rangle,s'))
+	\\
+	=E_{a_{[n]-Z} \in A_{[n]-Z}}(h(s,\langle a_i,a_{-i} \rangle)+\beta_iE_{\pi^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z}}(\Sigma_{t=0}^{k-1} \beta_i^{t}h_{i}(\pi^{s}(t),\pi^{a}(t))|BT(Z,s,\langle a_i,a_{-i} \rangle,s')))\\
+	=E_{a_{[n]-Z} \in A_{[n]-Z}}(h(s,\langle a_i,a_{-i} \rangle)) +
+	E_{A_{[n]-Z}}(E_{\pi'^{a} \in \Pi_{t=1}^{k}A_{[n]-Z}}(\Sigma_{t=1}^{k} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t))|BT(Z,s,\langle a_i,a_{-i} \rangle,s')))\\
+	=E_{\pi'^{a} \in \Pi_{t=0}^{k}A_{[n]-Z}}(h(s,\langle a_i,a_{-i} \rangle)) +
+	E_{\pi'^{a} \in \Pi_{t=0}^{k} A_{[n]-Z}}(\Sigma_{t=1}^{k} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t))|BT(Z,s,\langle a_i,a_{-i} \rangle,s'))\\
+	=E_{\pi'^{a} \in \Pi_{t=0}^{k} A_{[n]-Z}}(\Sigma_{t=0}^{k} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t))|BT(Z,s,\langle a_i,a_{-i} \rangle,s'))\\
+	\end{aligned}
+	\end{equation*}
+	
+	maximin value would be \\
+	\begin{equation}
+	\begin{split}
+	v_i'^{k}(Z,s) = 
+	max_{\pi'^{a}_{i} \in \Pi_{t=0}^{k} A_{i}}
+	min_{\pi'^{a}_{[Z]-\{i\}} \in \Pi_{t=0}^{k} A_{[Z]-\{i\}}}\\
+	E_{\pi'^{a} \in \Pi_{t=0}^{k} A_{[n]-Z}}(\Sigma_{t=0}^{k} \beta_i^{t}h_{i}(\pi'^{s}(t),\pi'^{a}(t))|BT(Z,s,\langle a_i,a_{-i} \rangle,s'))
+	\end{split}	
+	\end{equation}
+	
+	
+	When $\{\pi\}$ is the path set corresponding to optimal expected value for length $k$,   $\{\pi'\}$ would be the path set $s\langle a_i,a_{-i}\rangle \pi \in \Pi_{t=0}^{k} A_{[n]-Z}$. Suppose we choose a different path set from $s'$ other than $v_i^k(s',Z)$ if does not correspond to the maximum expected value over player $i$ among the guaranteed values, we can miss a max value path set in general. 
+\end{proof}
+
+Proof is similar for $u_i^k(Z,s)$.
+
+% rest of the proof can be completed by using Lemmas $A.5$, $A.6$ and $A.7$ by replacing $v_i(\pi|_k)$ and $v_i(\pi)$ with $v_i(\{\pi\}|_k)$ and $v_i(\{\pi\})$ respectively. The final result we obtain is $\max $

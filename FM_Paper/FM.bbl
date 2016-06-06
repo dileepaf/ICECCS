@@ -1,0 +1,251 @@
+\begin{thebibliography}{10}
+
+\bibitem{Norman2006}
+{Analysis of probabilistic contract signing}.
+\newblock (October):1--26, 2006.
+
+\bibitem{AAH11}
+I.~Abraham, L.~Alvisi, and J.~Y. Halpern.
+\newblock Distributed computing meets game theory: combining insights from two
+  fields.
+\newblock {\em {SIGACT} News}, 42(2):69--76, 2011.
+
+\bibitem{alur1997partial}
+R.~Alur, R.~K. Brayton, T.~A. Henzinger, S.~Qadeer, and S.~K. Rajamani.
+\newblock Partial-order reduction in symbolic state space exploration.
+\newblock In {\em Computer Aided Verification}, pages 340--351. Springer, 1997.
+
+\bibitem{AHM98}
+R.~Alur, T.~A. Henzinger, F.~Y.~C. Mang, S.~Qadeer, S.~K. Rajamani, and
+  S.~Tasiran.
+\newblock {MOCHA:} modularity in model checking.
+\newblock In {\em Proc.\ 10th Computer Aided Verification}, volume 1427 of {\em
+  LNCS}, pages 521--525. Springer, 1998.
+
+\bibitem{BCK10}
+M.~Backes, O.~Ciobotaru, and A.~Krohmer.
+\newblock Ratfish: {A} file sharing protocol provably secure against rational
+  users.
+\newblock In {\em Proc.\ 15th European Symposium on Research in Computer
+  Security}, volume 6345 of {\em LNCS}, pages 607--625. Springer, 2010.
+
+\bibitem{BK08}
+C.~Baier, J.-P. Katoen, et~al.
+\newblock {\em Principles of model checking}, volume 26202649.
+\newblock MIT press Cambridge, 2008.
+
+\bibitem{BFW06}
+P.~Ballarini, M.~Fisher, and M.~Wooldridge.
+\newblock Automated game analysis via probabilistic model checking: a case
+  study.
+\newblock {\em Electr. Notes Theor. Comput. Sci.}, 149(2):125--137, 2006.
+
+\bibitem{Ben-Or1990}
+M.~Ben-Or, O.~Goldreich, S.~Micali, and R.~Rivest.
+\newblock {A fair protocol for signing contracts}.
+\newblock {\em IEEE Transactions on Information Theory}, 36(1):40--46, 1990.
+
+\bibitem{bouyer2012concurrent}
+P.~Bouyer, R.~Brenguier, N.~Markey, and M.~Ummels.
+\newblock Concurrent games with ordered objectives.
+\newblock In {\em Foundations of software science and computational
+  structures}, pages 301--315. Springer, 2012.
+
+\bibitem{Brenguier13}
+R.~Brenguier.
+\newblock {PRALINE:} {A} tool for computing nash equilibria in concurrent
+  games.
+\newblock In {\em Proc.\ 25th Computer Aided Verification}, volume 8044 of {\em
+  LNCS}, pages 890--895. Springer, 2013.
+
+\bibitem{Buttyan1999}
+L.~Buttyan and J.-P. Hubaux.
+\newblock {Toward a {\{}F{\}}ormal {\{}M{\}}odel of {\{}F{\}}air
+  {\{}E{\}}xchange - a {\{}G{\}}ame {\{}T{\}}heoretic {\{}A{\}}pproach}.
+\newblock (December 1999):1--16, 1999.
+
+\bibitem{CFK13}
+T.~Chen, V.~Forejt, M.~Z. Kwiatkowska, D.~Parker, and A.~Simaitis.
+\newblock Automatic verification of competitive stochastic systems.
+\newblock {\em Formal Methods in System Design}, 43(1):61--92, 2013.
+
+\bibitem{CD06}
+X.~Chen and X.~Deng.
+\newblock Settling the complexity of 2-player nash-equilibrium.
+\newblock In {\em Proceedings of the Annual Symposium on Foundations of
+  Computer Science (FOCS)}, 2006.
+
+\bibitem{CKL11}
+C.~Cheng, A.~Knoll, M.~Luttenberger, and C.~Buckl.
+\newblock {GAVS+:} an open platform for the research of algorithmic game
+  solving.
+\newblock In {\em Proc.\ 17th Tools and Algorithms for the Construction and
+  Analysis of Systems}, volume 6605 of {\em LNCS}, pages 258--261. Springer,
+  2011.
+
+\bibitem{Daskalakis13}
+C.~Daskalakis.
+\newblock On the complexity of approximating a nash equilibrium.
+\newblock {\em {ACM} Transactions on Algorithms}, 9(3):23, 2013.
+
+\bibitem{DGP09}
+C.~Daskalakis, P.~W. Goldberg, and C.~H. Papadimitriou.
+\newblock {The complexity of computing a Nash equilibrium}.
+\newblock {\em Communications of the ACM}, 52(2):89, 2009.
+
+\bibitem{DMP07}
+C.~Daskalakis, A.~Mehta, and C.~H. Papadimitriou.
+\newblock Progress in approximate nash equilibria.
+\newblock In {\em Proc.\ 8th {ACM} Conference on Electronic Commerce}, pages
+  355--358. {ACM}, 2007.
+
+\bibitem{AM04}
+L.~de~Alfaro and R.~Majumdar.
+\newblock Quantitative solution of omega-regular games.
+\newblock {\em J. Comput. Syst. Sci.}, 68(2):374--397, 2004.
+
+\bibitem{FPT04}
+A.~Fabrikant, C.~H. Papadimitriou, and K.~Talwar.
+\newblock The complexity of pure nash equilibria.
+\newblock In {\em Proc.\ 36th Annual {ACM} Symposium on Theory of Computing},
+  pages 604--612. {ACM}, 2004.
+
+\bibitem{FT91}
+D.~Fudenberg and J.~Tirole.
+\newblock {\em Game Theory}.
+\newblock MIT Press, Cambridge, MA, 1991.
+
+\bibitem{gripon2009qualitative}
+V.~Gripon and O.~Serre.
+\newblock Qualitative concurrent stochastic games with imperfect information.
+\newblock In {\em Automata, Languages and Programming}, pages 200--211.
+  Springer, 2009.
+
+\bibitem{HT04}
+J.~Halpern and V.~Teague.
+\newblock Rational secret sharing and multiparty computation: Extended
+  abstract.
+\newblock In {\em Proc.\ 36th Annual {ACM} Symposium on Theory of Computing},
+  pages 623--632. {ACM}, 2004.
+
+\bibitem{hao2012probabilistic}
+J.~Hao, S.~Song, Y.~Liu, J.~Sun, L.~Gui, J.~S. Dong, and H.-f. Leung.
+\newblock Probabilistic model checking multi-agent behaviors in dispersion
+  games using counter abstraction.
+\newblock In {\em PRIMA 2012: Principles and Practice of Multi-Agent Systems},
+  pages 16--30. Springer, 2012.
+
+\bibitem{Henzinger98}
+T.~A. Henzinger.
+\newblock Model checking game properties of multi-agent systems (abstract).
+\newblock In {\em Proc.\ 25th Automata, Languages and Programming}, volume 1443
+  of {\em LNCS}, page 543. Springer, 1998.
+
+\bibitem{KGNT09}
+R.~Kaivola, R.~Ghughal, N.~Narasimhan, A.~Telfer, J.~Whittemore, S.~Pandav,
+  A.~Slobodov{\'a}, C.~Taylor, V.~Frolov, E.~Reeber, et~al.
+\newblock Replacing testing with formal verification in
+  intel\^{}$\{$$\backslash$ scriptsize$\backslash$ circledR$\}$ coretm i7
+  processor execution engine validation.
+\newblock In {\em Computer Aided Verification}, pages 414--429. Springer, 2009.
+
+\bibitem{KR03}
+S.~Kremer and J.~Raskin.
+\newblock A game-based verification of non-repudiation and fair exchange
+  protocols.
+\newblock {\em Journal of Computer Security}, 11(3):399--430, 2003.
+
+\bibitem{KSRJ01}
+S.~Kremer and J.-F. Raskin.
+\newblock {A game-based verification of non-repudiation and fair exchange
+  protocols}.
+\newblock {\em CONCUR 2001—Concurrency Theory}, pages 551--565, 2001.
+
+\bibitem{KNP11}
+M.~Kwiatkowska, G.~Norman, and D.~Parker.
+\newblock Prism 4.0: Verification of probabilistic real-time systems.
+\newblock In {\em Proc.\ 23rd International Conference on Computer Aided
+  Verification}, CAV'11, pages 585--591, 2011.
+
+\bibitem{LCW06}
+H.~C. Li, A.~Clement, E.~L. Wong, J.~Napper, I.~Roy, L.~Alvisi, and M.~Dahlin.
+\newblock {BAR} gossip.
+\newblock In {\em Proc.\ 7th Symposium on Operating Systems Design and
+  Implementation}, pages 191--204. {USENIX} Association, 2006.
+
+\bibitem{LEB03}
+M.~Lillibridge, S.~Elnikety, A.~Birrell, M.~Burrows, and M.~Isard.
+\newblock A cooperative internet backup scheme.
+\newblock In {\em Proc.\ the General Track: 2003 {USENIX} Annual Technical
+  Conference}, pages 29--41. {USENIX}, 2003.
+
+\bibitem{LQR09}
+A.~Lomuscio, H.~Qu, and F.~Raimondi.
+\newblock {MCMAS:} {A} model checker for the verification of multi-agent
+  systems.
+\newblock In {\em Proc.\ 21st Computer Aided Verification}, volume 5643 of {\em
+  LNCS}, pages 682--688. Springer, 2009.
+
+\bibitem{LR06}
+A.~Lomuscio and F.~Raimondi.
+\newblock Model checking knowledge, strategies, and games in multi-agent
+  systems.
+\newblock In {\em Proc.\ 5th International Joint Conference on Autonomous
+  Agents and Multiagent Systems}, pages 161--168. {ACM}, 2006.
+
+\bibitem{MS05}
+A.~Mahimkar and V.~Shmatikov.
+\newblock Game-based analysis of denial-of-service prevention protocols.
+\newblock In {\em Proc.\ 18th {IEEE} Computer Security Foundations Workshop},
+  pages 287--301. {IEEE} Computer Society, 2005.
+
+\bibitem{MariPhD}
+F.~Mari.
+\newblock Verification and synthesis for discrete time linear hybrid systems.
+
+\bibitem{MMS08}
+F.~Mari, I.~Melatti, I.~Salvo, E.~Tronci, L.~Alvisi, A.~Clement, and H.~C. Li.
+\newblock Model checking nash equilibria in {MAD} distributed systems.
+\newblock In {\em Formal Methods in Computer-Aided Design}, pages 1--8. {IEEE},
+  2008.
+
+\bibitem{OR94}
+M.~J. Osborne and A.~Rubinstein.
+\newblock {\em A course in game theory}.
+\newblock MIT press, 1994.
+
+\bibitem{PAT}
+P.~project.
+\newblock Pat: Process analysis toolkit.
+\newblock pat.comp.nus.edu.sg, last visted at 25 Feb. 2016.
+
+\bibitem{Rabin83}
+M.~O. Rabin.
+\newblock Transaction protection by beacons.
+\newblock {\em J. Comput. Syst. Sci.}, 27(2):256--267, 1983.
+
+\bibitem{Shamir79}
+A.~Shamir.
+\newblock How to share a secret.
+\newblock {\em Commun. {ACM}}, 22(11):612--613, 1979.
+
+\bibitem{SP04}
+J.~Shneidman and D.~C. Parkes.
+\newblock Specification faithfulness in networks with rational nodes.
+\newblock In {\em Proc.\ 23rd Annual {ACM} Symposium on Principles of
+  Distributed Computing}, pages 88--97. {ACM}, 2004.
+
+\bibitem{TGW15}
+A.~Toumi, J.~Gutierrez, and M.~Wooldridge.
+\newblock A tool for the automated verification of nash equilibria in
+  concurrent games.
+\newblock In {\em Proc.\ 12th Theoretical Aspects of Computing}, volume 9399 of
+  {\em LNCS}, pages 583--594. Springer, 2015.
+
+\bibitem{ZZPM12}
+Y.~Zhang, C.~Zhang, J.~Pang, and S.~Mauw.
+\newblock Game-based verification of contract signing protocols with minimal
+  messages.
+\newblock {\em {ISSE}}, 8(2):111--124, 2012.
+
+\end{thebibliography}

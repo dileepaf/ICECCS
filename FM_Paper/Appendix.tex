@@ -1,0 +1,238 @@
+\appendix
+
+\section{Proofs}
+
+In order to prove the convergence of the value function we should find a function to determine the value difference.\newline
+Define $e_i(k)=\beta_i^{k}\frac{M_i}{1-\beta_i}$. 
+
+
+
+\begin{lemma}
+	\label{lem : conv_vi_path4}
+	\begin{enumerate}
+		\item $\forall k\in \mathbb{N}, |v_i(\{\pi\})-v_i(\{\pi|_k\})|$ $\le$ $e_i(k)$.	
+		\item $\lim_{k\to\infty} v_i(\{\pi\})=v_i(\{\pi|_k\})$
+		\end{enumerate}
+		\end{lemma}
+		
+		
+		\begin{proof}
+			%	Let $\pi''^{a}=<b,\pi'^{a}>$ , $b \in A$\newline
+			Consider the absolute difference for $T$-length path tree and fixed $k$-length path tree as follows.
+			\begin{enumerate}
+				\item 	$|v_i(\{\pi|_T\})-v_i(\{\pi|_k\})| =$\\
+				$| E_{\pi^{'a} \in \Pi_{t=0}^{k-1} A_{[n]-Z}}(\Sigma_{t=0}^{k-1} \beta_i^{t}h_{i}(\pi^{s}(t),\pi^{a}(t))) -$\newline
+				$ E_{\pi''^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z} \Pi_{t=k}^{T} A_{[n]-Z}}(\Sigma_{t=0}^{T} \beta_i^{t}h_{i}(\pi''^{s}(t),\pi''^{a}(t)))|$\\
+				\newline
+				We need to equalize the variable set considered expected value. We just append the variables that do not appear in the expected value function to the considered variable set since it does not make any difference. \newline \newline
+				$| E_{\pi''^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z} \Pi_{t=k}^{T} A_{[n]-Z}}(\Sigma_{t=0}^{k-1} \beta_i^{t}h_{i}(\pi^{s}(t),\pi^{a}(t)))-$\newline
+				$ E_{\pi''^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z} \Pi_{t=k}^{T} A_{[n]-Z}}(\Sigma_{t=0}^{T} \beta_i^{t}h_{i}(\pi''^{s}(t),\pi''^{a}(t)))|$\\
+				$ |E_{\pi''^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z} \Pi_{t=k}^{T} A_{[n]-Z}}(\Sigma_{t=k}^{T} \beta_i^{t}h_{i}(\pi''^{s}(t),\pi''^{a}(t)))|$\\
+				$\leq |\Sigma_{t=k}^{T} E_{\pi''^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z} \Pi_{t=k}^{T} A_{[n]-Z}}( \beta_i^{t}h_{i}(\pi''^{s}(t),\pi''^{a}(t)))| $ (Linearity of Expectation)\\
+				$\leq \Sigma_{t=k}^{T}| E_{\pi''^{a} \in \Pi_{t=0}^{k-1} A_{[n]-Z} \Pi_{t=k}^{T} A_{[n]-Z}}( \beta_i^{t}h_{i}(\pi''^{s}(t),\pi''^{a}(t)))| $ (Triangle inequality)\\
+				$\le \beta_i^{k}\frac{M_i}{1-\beta_i}$ (By the choice of $M_i$ and $\lim_{T\to\infty}$)\\
+				$\leq e_i(k)$
+				\item $\lim_{k\to\infty} e_i(k)=0$,\\
+				$\lim_{k\to\infty} |v_i(\{\pi\})-v_i(\{\pi|_k\})| = 0$ (by comparison test)\\
+				$\lim_{k\to\infty} v_i(\{\pi\})=v_i(\{\pi|_k\})$.
+				\end{enumerate}
+				\end{proof}
+				
+				\begin{lemma}
+					\label{lem : opt_finite_path5}
+					Let $\{ \pi \}$ be a path tree s.t. $v_i(\{\pi\})$ is minimum in $Path(s,Z,i,\{\sigma\})$. Let $\{\{\bar\pi_k \} \}_{k \in \mathbb{N}}$ be a sequence of finite path, s.t. $\forall k$, $v_i(\{\bar\pi_k   \})$ is minimum in $Path_k(s,Z,i,\{\sigma\})$. Then $v_i(\{\pi|_k\})-v_i(\{\bar\pi_k\}) \le 2e_i(k)$
+					\end{lemma}\cite{MariPhD}
+					
+					\begin{lemma}
+						\label{lem : opt_finite_strat6}
+						$\forall Z \in [n]$, $\forall \text{state s} \in S$ and $\forall strategy$ $sets \{\sigma\}$ we have \\
+						$\lim_{k\to\infty} v_i^{k}(Z,s,\{\sigma\}|_k) = v_i(Z,s,\{\sigma\}) $
+						\end{lemma}\cite{MariPhD}
+						
+						\begin{lemma}
+							\label{lem : conv_vi7}
+							$\forall Z \subseteq [n]$, $\forall \text{states s} \in S$ and $\forall k \in \mathbb{N}$, we have:\\
+							$|v_i^{k}(Z,s)-v_i(Z,s)| < 5e_i(k)$
+							\end{lemma}\cite{MariPhD}
+							
+							\begin{lemma}
+								\label{lem : conv_ui8}
+								$\forall Z \subseteq [n]$, $\forall \text{states s}$ and $\forall k \in \mathbb{N}$, we have: \\
+								$|u_i^{k}(Z,s) - u_i(Z,s)| < 5e_i(k)$
+								\end{lemma}\cite{MariPhD}
+								
+								By referring to the above lemmas we can state the following proposition. \\
+								
+								\begin{proposition}
+									\begin{enumerate}
+										\item $\lim_{k\to\infty} v_i^{k}(Z,s)=v_i(Z,s)$
+										\item $\lim_{k\to\infty} u_i^{k}(Z,s)=u_i(Z,s)$
+										\end{enumerate}
+										\end{proposition} \cite{MariPhD}
+										
+										Now we can prove the theorem \ref{thm : correctness}.\\
+										By Lemma \ref{lem : conv_vi7} and \ref{lem : conv_ui8} we have, \\
+										$\forall Z \in P_\chi([n]-\{i\})$ and $\forall states s \in S$\\
+										$|v_i^{k}(Z,s)-v_i(Z,s)| < 5e_i(k)$\\
+										$|u_i^{k}(Z,s) - u_i(Z,s)| < 5e_i(k)$\\
+										This will imply,\\
+										$v_i(Z \cup \{i\},s) \le v_i^{k}(Z \cup \{i\},s) + 5e_i(k)$  By Lemma $ \ref{lem : opt_finite_path5}$\\
+										$v_i(Z \cup \{i\},s) \ge v_i^{k}(Z \cup \{i\},s) - 5e_i(k)$  By Lemma $ \ref{lem : opt_finite_strat6}$\\
+										$u_i(Z ,s) \le u_i^{k}(Z ,s) + 5e_i(k)$  By Lemma $ \ref{lem : conv_vi7}$\\
+										$u_i(Z ,s) \ge u_i^{k}(Z ,s) - 5e_i(k)$  By Lemma $ \ref{lem : conv_ui8}$\\
+										\cite{MariPhD}
+										Now, we can prove the $3$ statements.\\
+										\begin{enumerate}
+											\item Using Lemma \ref{lem : opt_finite_path5} and Lemma \ref{lem : conv_ui8},\\
+											$v_i(Z \cup \{i\},s) - u_i(Z ,s) \le v_i^{k}(Z \cup \{i\},s) + 5e_i(k) - (u_i^{k}(Z ,s) - 5e_i(k) )$\\
+											$=v_i^{k}(Z \cup \{i\},s) - u_i^{k}(Z ,s) + 10e_i(k)  $\\
+											$\le \Delta_i(k) + 10e_i(k) $\\
+											if $\epsilon \ge \epsilon_2(i,k)$ then $\Delta_i(k) \le \epsilon - 10e_i(k)$\\
+											So, $\forall Z \in P_\chi([n]-\{i\})$ and $\forall s \in I$, \\
+											$v_i(Z \cup \{i\},s) - u_i(Z ,s) \le \epsilon$\\
+											$M$ is $\epsilon - \chi-Nash$.
+											\item Similarly, \ref{lem : opt_finite_strat6} and \ref{lem : conv_vi7} can be used to prove\\
+											$v_i(Z \cup \{i\},s) - u_i(Z ,s) \ge v_i^{k}(Z \cup \{i\},s) - 5e_i(k) - (u_i^{k}(Z ,s) + 5e_i(k) )$\\
+											$=v_i^{k}(Z \cup \{i\},s) - u_i^{k}(Z ,s) - 10e_i(k)  $\\
+											if $\epsilon \le \epsilon_1(i,k)$ then $\Delta_i(k) \ge \epsilon + 10e_i(k)$\\
+											This implies $\exists Z \in P_\chi([n]-\{i\})$ and $s \in I$ s.t.\\
+											$v_i(Z \cup \{i\},s) - u_i(Z ,s) \ge \epsilon$\\
+											$M$ is not $\epsilon-\chi-Nash$.
+											\item if $\forall i$, $\epsilon_1(i,k_i) < \epsilon$ and for some $j, \epsilon < \epsilon_2(j,k_j)$, \\
+											it is not possible to decide whether $M$ is $\epsilon-\chi-Nash$. But, since $\epsilon_2(j,k_j)-\epsilon_1(i,k_i)= 20e_i(k_i)$ and $20e_i(k_i) < \delta$, we have,\\
+											$\forall i \in [n]$, $\epsilon + \delta > \epsilon_2(i,k_i)$. According to statement $1$, we have\\
+											$(\epsilon + \delta)-\chi-Nash$.
+											\end{enumerate}\cite{MariPhD}
+
+\section{Modelling Randomized Secret Sharing according to the specification}
+
+The protocol we model has $3$ players.
+
+States can be numbered based on the stage of the protocol and the number of actions enabled in previous stage. We can identify stages numbered from $0$ to $6$. \newline Define a function size to determine the number of states in a particular stage.
+
+\begin{itemize}
+	\item stage $0$ - initial state - size($0$)= $1$
+	\item stage $1$ - after choosing $c_i$ - size($1$)= $2$
+	\item stage $2$ - after choosing $c_{i,i+1}$ - size($2$)= $2$
+	\item stage $3$ - after sending $c_{i,i-1}$ - size($3$)= $2$
+	\item stage $4$ - after sending xor - size($4$)= $2$
+	\item stage $5$ - after sending $m$ to $i+1$ - size($5$)= $2$
+	\item stage $6$ - after sending $m$ to $i-1$ - size($6$)= $2$
+\end{itemize}
+
+A state can be represented by a sequence of integers with length denoting the stage it belongs to, 
+and each number of the sequence belonging to the chosen action in each of the previous states.
+This numbering mechanism is similar of all the players.
+
+$S_1=\{ x \in seq(\{1,2\}) \vert |x| \le 7 \forall i , x_i \le size(i-1)  \}$\newline
+$S_2=\{ x \in seq(\{1,2\}) \vert |x| \le 7 \forall i , x_i \le size(i-1)  \}$\newline
+$S_3=\{ x \in seq(\{1,2\}) \vert |x| \le 7 \forall i , x_i \le size(i-1)  \}$\newline
+
+
+\paragraph{Actions}
+We have $3$ action sets, $A_1$ , $A_2$ and $A_3$.\newline
+$A_1 = \{ c_1,nc_1, c_{12}, nc_{12},  sr_{12}, sr_{13}, sr_{21}, sr_{31}, nsr_{12}, nsr_{13}, nsr_{21}, nsr_{31}, $ \newline $xor_{13},xor_{21}, nxor_{13},nxor_{21},$\newline $ m_{12}, m_{13},m_{21},m_{31},  nm_{12}, nm_{13},nm_{21},nm_{31}, e\}$
+\newline
+$A_2 = \{ c_2,nc_2, c_{23}, nc_{23},  sr_{23}, sr_{21}, sr_{32}, sr_{12}, nsr_{23}, nsr_{21}, nsr_{32}, nsr_{12}, $ \newline $
+xor_{21},xor_{32}, nxor_{21},nxor_{32},$\newline $m_{21}, m_{23},m_{12},m_{32}, nm_{21}, nm_{23},nm_{12},nm_{32},
+e\}$
+\newline
+$A_3 = \{ c_3,nc_3, c_{31}, nc_{31},  sr_{31}, sr_{32}, sr_{23}, sr_{13}, nsr_{31}, nsr_{32}, nsr_{23}, nsr_{13}, $\newline$
+xor_{32},xor_{13}, nxor_{32},nxor_{13},$\newline $m_{32}, m_{31},m_{23},m_{13}, nm_{32}, nm_{31},nm_{23},nm_{13},
+e\}$
+
+The set of synchronized actions $A^s$ is, \newline
+$A^s = \{ sr_{12},sr_{13},sr_{21},sr_{23},sr_{31},sr_{32}, xor_{13}, xor_{21} , xor_{32} $\newline$
+nsr_{12},nsr_{13},nsr_{21},nsr_{23},nsr_{31},nsr_{32}, nxor_{13}, nxor_{21} , nxor_{32}
+\}$
+
+\paragraph{Local Transition function}
+Transitions happens between consecutive stages of the protocol. For a transition to be valid, the sequence corresponding to current and next states should vary by exactly $1$. Sequence corresponding to the current state should be a prefix of the next state.
+
+\paragraph{Local Action Probabilities}
+
+\begin{equation*}
+P_1(s_1,a_1)=
+\begin{cases}
+\alpha &  s_1=I_1 \wedge a_1=c_1  \\
+1 - \alpha &  s_1=I_1 \wedge a_1=nc_1  \\
+0.5 &  s_1=I_{11} \vee s_1=I_{12}  \wedge a_1=c_{12} \vee a_1=c_{13} \\
+1 & otherwise
+\end{cases}	
+\end{equation*}
+
+\begin{equation*}
+P_2(s_2,a_2)=
+\begin{cases}
+\alpha &  s_2=I_2 \wedge a_2=c_2  \\
+1 - \alpha &  s_2=I_2 \wedge a_2=nc_2  \\
+0.5 &  s_2=I_{21} \vee s_2=I_{22}  \wedge a_2=c_{21} \vee a_1=c_{23} \\
+1 & otherwise
+\end{cases}	
+\end{equation*}
+
+\begin{equation*}
+P_3(s_3,a_3)=
+\begin{cases}
+\alpha &  s_3=I_3 \wedge a_3=c_3  \\
+1 - \alpha &  s_3=I_3 \wedge a_3=nc_3  \\
+0.5 &  s_3=I_{31} \vee s_3=I_{32}  \wedge a_3=c_{32} \vee a_1=c_{31} \\
+1 & otherwise
+\end{cases}	
+\end{equation*}
+
+
+\section{Definitions of Basic Concepts}
+Here are some general definitions of the concepts used in the paper. 
+\begin{definition}
+	concurrency : The property of program, algorithm, or problem decomposability into order-independent or partially-ordered components or units.This means that even if the concurrent units of the program, algorithm, or problem are executed out-of-order or in partial order, the final outcome will remain the same. This allows for parallel execution of the concurrent units, which can significantly improve the overall speed of execution in multi-processor and multi-core systems.
+\end{definition}
+
+\begin{definition}
+	Protocol : A set of rules that governs the interaction between agents. 
+\end{definition}
+
+Difference between automata and finite state machine
+\begin{definition}
+	Synchronization:
+	Process of precisely coordinating or matching two or more activities, devices, or processes in time
+\end{definition}
+
+\begin{definition}
+	Game Theory : Game theory is the mathematical study of interaction among independent, self-interested agents. 	
+\end{definition}
+
+According to the definition of game theory we can define a game.
+
+\begin{definition}
+	Game : Well defined set of interactions among independent self-interested agents.
+\end{definition}
+
+\begin{definition}
+	Game: A game is defined as a decision tree (or more precisely, a dag) in which every edge, called move, has a polarity indicating whether it is played by the program, called Proponent, or by the environment, called Opponent.
+\end{definition}
+
+\begin{definition}
+	Alternating Game: A play is alternating when Proponent and Opponent alternate strictly - that is, when neither of them plays two moves in a row.
+\end{definition}
+
+\begin{definition}
+	Concurrent Game:
+\end{definition}
+
+\begin{definition}
+	A (finite) concurrent game is a \newline
+	tuple G=$\langle h,States,Agt,Act,Mov,Tab \rangle$
+	, where $States$ is a \newline 
+	(finite) set of states,
+	$Agt$ is a  (finite) set of players, $Act$ is a  (finite) set of actions, and
+	$Mov : States \times Agt \rightarrow 2^{act} \setminus \{\phi\}$ is a mapping indicating the actions available to a given player in a given state; \newline
+	$Tab : States \times Act^{Agt} \rightarrow States$ associates  with  a  given  state  and  a  given move of the players the resulting state.
+\end{definition} \cite{bouyer2012concurrent}
+The above definition refers to a global state set and can be used for perfect information games. In imperfect information games, some global states are indistinguishable. Probability can also be in-cooperated in to the state transition function.  \cite{gripon2009qualitative}
+
+\begin{definition}
+	Protocol as a game : A protocol is a set of rules that governs the interaction between agents. When these agents are self-interested, we can model the protocol as a game. 	
+\end{definition}
+
+

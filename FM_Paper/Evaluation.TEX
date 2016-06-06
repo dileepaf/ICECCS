@@ -1,0 +1,20 @@
+\section{EXPERIMENTAL RESULTS}
+Experiments are based on the example mechanism presented in section \ref{ssec:ex}. Exact same mechanism is tested for running time and memory performance for different numbers of players and different Byzantine set sizes. In all cases $\epsilon=0.01$ and $\delta=0.005$. Experiments were run in 64-bit x-86 Intel machine having 2.40 GHz processor with 8GB RAM.
+
+\begin{table}[H]
+	\centering
+	\caption{Experimental Results }
+	\label{my-label}
+	\resizebox{\columnwidth}{!}{
+	\begin{tabular}{|l|l|l|l|l|l|l|l|}
+		\hline
+		Agents & Jobs & Byzantines & Nash & CPU(sec) & Present State Bits & Action Bits \\ \hline
+		3      & 2    & 1          & PASS & 7.8405   &  9                 &  3          \\
+		3      & 2    & 2          & PASS & 16.7238  &  9                 &  3          \\
+		3      & 2    & 3          & FAIL & 7.6124   &  9                 &  3          \\
+		4      & 2    & 1          & PASS & 979.3278 &  12                &  4          \\
+		4      & 2    & 2          & FAIL & 1667.687 &  12                &  4          \\
+		4      & 2    & 3          & FAIL & 1892517  &  12                &  4          \\ \hline
+	\end{tabular}
+}
+\end{table}

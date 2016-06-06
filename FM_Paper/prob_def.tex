@@ -1,0 +1,197 @@
+\subsection{Probability Extension}\label{ssec:prob_act}
+
+We extend the above specification to be able to specify probabilistic systems. A probabilistic system specifies the probability of each action in the system. To be more general, we allow hybrid probabilistic systems, meaning that some actions of a player in the systems are probabilistic, some of the actions can be deterministic. We also introduce synchronized actions. The set of synchronised actions can be denoted by $A^s$. $A^s \subseteq \hat{A}$ 
+
+First of all, we update the model of players. Then we extend the state representation to be probabilistic. More importantly, we present the calculation of the value $v_i^{k}(Z, s)$ and worst value $u_i^{k}(Z, s)$ of a state in the probabilistic settings.
+
+\paragraph{Byzantine Player}
+In a non-probabilistic setting, a Byzantine player is modeled as all possible local states and their corresponding feasible local actions.
+In a probabilistic setting, a Byzantine player has exactly the same local states and the corresponding local actions, since probabilistic systems do not introduce additional local actions.
+That is to say, similar as in the non-probabilistic setting, a Byzantine player can deviate from a system specification by performing actions that are not defined in the system.
+In addition to perform extra actions, for the probabilistic actions in a system, a Byzantine player is able to deviate from the specification by changing the probability distributions of the actions. For example, if a system specifies a player's action as follows: the player toss a coin - with probability $1/2$ to be head and $1/2$ to be tail, if it is head, the player sends $1$, otherwise, sends $0$. A Byzantine player can deviate from the specification by changing the coin into a special one -- with probability $1/3$ to be head and probability $2/3$ to be tail. Furthermore, a Byzantine player is able to assign probability to non-probabilistic actions. For example, a system specifies a deterministic action of sending $1$, a non-probabilistic Byzantine player can deviate by sending $0$, a probabilistic Byzantine player can toss a coin -- with probability $\alpha$ to be head and probability $1-\alpha$ to be tail, and sends $1$ if it is head and sends $0$ if it is tail. To summarize, a Byzantine player is able to assign an arbitrary probability distribution (which adds up to $1$) to at a local state.
+
+
+
+\paragraph{Altruistic Player}
+An altruistic player follows system specification, and thus has predefined probability distribution for each probabilistic action. Each state has a unique probabilistic action defined. If only one action is defined it can be considered as a specific case of containing a single action of probability $1$.
+%Locally, this can be modelled by adding the pre-defined probability to probabilistic actions and keeping other actions the same as in the non-probabilistic settings.
+
+%Globally, in order to specify the hybrid actions, we need to distinguish which actions are probabilistic and which are not. Since the system specifies the distinction. At a global state, we are able to tell the probabilistic actions from the non-probabilistic actions.
+
+Since local actions at a local states are feasible actions at the corresponding global states,
+
+%this can be formally modelled by defining a function $P_i: S \times A_i \rightarrow \mathbb{R}$ where $\mathbb{R}$ ranges over $[0,1]$, with the requirement that
+%at a global state $s$, \(\Sigma_{a \in A_i \wedge B_i(s,a)} P_i(s,a) = 1.\)
+
+We model probabilities of performing local actions starting at given local states. Define $P_i: S_i \times A_i \rightarrow [0,1]$ , with the requirement that
+$\forall s_i \in S_i$, \(\Sigma_{a_i \in A_i} P_i(s_i,a_i) = 1.\)
+
+A local action $a_i$ is defined in local state $s_i$ $ \iff P_i(s_i,a_i) > 0$.
+
+
+We can also define probabilities of global actions given a global state.
+Remember that a global state $s \in S$ can be written as a local state sequence, $\langle s_1,s_2, \dots s_n \rangle$ and global state $a \in A$ can be written as local action sequence $\langle a_1,a_2, \dots a_n  \rangle$. 
+Now we can define, Probability function for global actions $P : S \times A \times \mathbb{P}([n]) \rightarrow [0,1]$. \newline
+
+\begin{equation*}
+P(s,a,Z)=
+\prod_{i \notin Z} P_i(s_i,a_i)
+\end{equation*}  
+
+The global transition function $BT$ also should be updated to support synchronized actions.
+We define set $J_i$ ,for $i \in 1 \dots n $  to count the number of occurrences of synchronized local action $a_i$ in the action sequence $a$.
+\newline
+$J_i$ = $\{k$  $ \vline$ $ k \in 1 \dots n \wedge a_i \in A^s \wedge a_i = a_k \}$. \newline
+
+\begin{equation*}
+BT(Z,s,a,s')=
+\begin{cases}
+\wedge _ i BT_i(Z,s,a_i,s'_i) &  \forall \text{ } i \text{, } a_i \notin A^s \\
+\wedge _ i BT_i(Z,s,a_i,s'_i) \wedge (J_i(a) != 1 )  & otherwise
+\end{cases}	
+\end{equation*}
+
+
+It should be noted that if $BT(Z,s,a,s')=false$ then  $s'$ is a deadlock state.
+
+%Define $PA(s)=(PA_1(s),PA_2(s), \cdots ,PA_n(s))$.
+%Let $P(s,a)=(P_1(s,a),P_2(s,a), \cdots ,P_n(s,a))$ For notational simplicity we would just use $P$.
+
+%If the action is not probabilistic, it would be deterministic. \newline
+%$ \forall s \in S$ and $a \in A , T_i(s,a)=T_i(s,b) \implies a=b$
+
+%We define a probabilistic action player has full information about the local state he reaches when he performs the action. The probability distribution of the action components. The probability distribution of action components is provided by the protocol. We assume that, a Byzantine player has the full power of changing that probability distribution. In a probabilistic action, different action components may reach in different local states.
+ %We do not have to consider the %resulting local state in the definition of $P_i$ due to the deterministic property.
+%We require that at a global state $s$, $\Sigma_{a \in A_i \wedge B_i(s,a)} P_i(s,a) = 1$.
+% $\Sigma_{a \in A_i \wedge B_i(s,a) \wedge P_i(s,a) \neq 1 } P_i(s,a) = 1$
+%We don't allow $P_i$ value to be $0$ here in the analysis for the ease of explanation. If we allow $0$ we would have to reduce %the automata to cut down impossible action sequences.
+
+%\paragraph{New Formalisms}
+%In order to generalize these values to match probabilistic behaviour we define several new notations.
+
+%$r$ refers to the definition in section of probabilistic actions.
+%for each global action $a \in A^{r}(s)$ and player $i \in [n]$, \newline
+%$\Theta (a,r,s,i) = \{y | y \in A_{-i}^{r}(s) \wedge r^{0}(y,s) = r^{0}(a_{-i},s) \wedge (y_j = a_j$  $ \forall j \in r^{0}(a_{-i},s)) \}$ . We can see that for given $r$ and $s$, the sets denoting $\Theta (a,r,s,i)$ forms a partition of $A^{r}(s)$ . Define this partition as $EP(r,s,i) = \{ \theta(a,r,s,i)| a \in A^{r}(s)$  and $i \in [n]\}$
+
+%\paragraph{Actions}
+% We would need to partition the set $A_i$ in to two namely, $A_i^{1}(s)$ and $A_i^{0}(s)$
+%$ A_i^{1}(s) = \{ a \in A_i | P_i(s,a) \ne 1 \}$
+%$ A_i^{0}(s) = \{ a \in A_i | P_i(s,a) = 1 \}$
+%An action is a set of operations defined for a player in a particular global state $s$.
+%We can define a set for atomic actions for a player $i$. $A_{at}(i)=\{a,b,c, \cdots\}.  $ $A_i(s) \subseteq A_{at}(i)$.
+%$A_i(s)$ set can either be components of a probabilistic action or a non-deterministic choice at global state $s$.
+%$A_i(s) = \{a |a \in A_{at(i)}  \wedge B_i(s,a)\}$
+%This probability distribution is local to a player.
+%$P_{(i,s)} : A_i(s) \rightarrow \Re^{+} $ and
+%$\Sigma_{a \in A_i(s)} P_{(i,s)}(a) = 1$.
+
+
+%Global probabilistic state is a set of global states $S_{pr} = \mathcal P (S_1 \times S_2 \times\cdots\times S_n)$ along with the probability of reachability under a strategy combination among the players. %A probabilistic state may contain only one global state with probability $1$. %A probabilistic state is a set of states that are reachable as a result of a valid global action sequence.\newline
+%For any global probabilistic state $s_{pr} \in S_{pr}$ there is a probability distribution. $P_s : S_{pr} \rightarrow \Re^{+}$.\newline
+
+%$\Sigma_{k \in S_{pr}} P_s(k) = 1$
+
+
+
+
+\paragraph{Rational Player}
+A rational player is a special case of a Byzantine player who has the full power to change the probability distribution of actions at a state, driven by utility. We show that a rational player would always choose an action which gives the maximum utility with probability $1$.
+Taking the simplest case with two actions,
+\begin{itemize}
+\item If both of the actions lead to paths that give exactly the same utility, the probability distribution of the two actions does not influence the utility. Hence, we can assume the player choose one action with probability $1$, the other with probability $0$, without loss of generality.
+\item If the two actions lead to paths that give different utility, the player would choose the one gives bigger utility with probability $1$, the other with probability $0$.
+\end{itemize}
+The same reasoning holds for the case that the player has more than two feasible actions.
+Therefore, we can safely model a rational player with non-probabilistic actions.
+%Note that this does not mean that probabilistic games are the same as non-probabilistic games, as we will show later in this section.
+%So, all the actions of a rational player converge to non-deterministic choice.
+
+
+
+
+%A local state set can be categorized into two sets named non-deterministic states and probabilistic states.
+%Define,
+%$nds_i : S_i \rightarrow B $ such that $nds_i(s)$ = true $\iff$ $s$ has a non-deterministic choice of local actions.
+%
+%We should also define a relation $par_i$. For any $b$ , $c$
+%$\in S_i$, $b$ $par_i$ $c$ $\iff$ $\exists a \in A_i$, $s \in S$ s.t. $B_i(s,a,c)$=true and $b$=$s_i$.
+%
+%For any $s_i \in S_i$ we can define $parset_i(s_i) = \{ t| t \in S_i \wedge (t$ $par^{+} s_i )  \}$. This refers to the set of ancestors of $s_i$ along any feasible path.
+%For any two global states $s=(s_1,s_2, \cdots ,s_n)$ and $t=(t_1,t_2, \cdots ,t_n)$ $\in S$, we can evaluate whether they are components of the same probabilistic state by traversing through the local parents of each local state component.
+%$\forall i \in [1, \cdots ,n]$
+%
+%Probabilistic state can be denoted as, \newline
+%$ s^{p} =\{(s,pr)| s \in S_1 \times S_2\times \cdots S_n,  \}$
+\paragraph{States}
+We extend the global state representation in~\cite{MMS08} with probability. Since a state may be reached via different paths. Each path that leads to the state may have different probability. In this case, we consider the global state with different probability two different states. In order to model it, we learn from the extensive form and use the history of states that lead to the current state to represent the current global state. 
+
+
+\paragraph{Actions}
+Since some players are probabilistic, a global action is defined as a set of atomic actions where each action can be assigned a probability. 
+
+Let $a \in A,$ $a_Z$ be the local action components of Byzantine players and $a_{[n]-Z}$ be the local action components of altruistic players. A probabilistic global action can be defined as, \newline
+
+$ GA=\{ a \in A | \forall a',a'' \in GA, a'_Z = a''_Z  \wedge \cup_{b \in GA} b_{[n]-Z}=A_{[n]-Z} \wedge  \forall c',c'' \in GA, c'_{[n]-Z} = c''_{[n]-z} \implies c'=c'' \}$
+  
+ 
+ An example action is presented in figure \ref{fig: prob_act}. Let $s= \langle s_1,s_2,s_3 \rangle \in S$. Let there are $3$ players $1,2,3$ with enabled action sets $\{a_1,a_2\}$, $\{b_1,b_2\}$ and $P\{c_1,c_2\}$ respectively. Let $1$ be an altruistic player. \\
+ $P_1(s_1,a_1)=p_1; P_1(s_1,a_2)=p_2;$
+ 
+ \begin{figure}
+	 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+	 semithick]
+	 \tikzstyle{every state}=[fill=red,draw=none,text=white]
+	 \node[initial,state] (A)                    {$s$};
+	 \node[state]         (B) [above right of=A] {};
+	 \node[state]         (C) [below right of=A] {};
+	 \node[state]         (D) [right of=B] {};
+	 \node[state]         (E) [right of=C] {};
+	 \node[state]         (F) [right of=D] {$s'$};
+	 \node[state]         (G) [right of=E] {$s''$};
+	 
+	 \path (A) edge              node {$a_1$,$p_1$} (B)
+	 edge              node {$a_2$,$p_2$} (C);
+	 \path (B) edge              node {$b_1$} (D);
+	 \path (C) edge              node {$b_1$} (E);
+	 \path (D) edge              node {$c_1$} (F);
+	 \path (E) edge              node {$c_1$} (G);
+	 \end{tikzpicture}
+	 \caption{Probabilistic Global Action Example}
+	 \label{fig: prob_act}
+ \end{figure}
+ This probabilistic action can be written in set notation, $\{(a_1,b_1,c_1),(a_2,b_1,c_1)\}$. The other possible probabilistic actions are, \\
+  $\{(a_1,b_1,c_2),(a_2,b_1,c_2)\}$, $\{(a_1,b_2,c_1),(a_2,b_2,c_1)\}$ and $\{(a_1,b_2,c_2),(a_2,b_2,c_2)\}$.
+ same strategy of rational players is applied to both probabilistic choices because of the parallel synchronous nature of the system. Rational players do not have information about the probabilistic choice made by the altruistic player.
+\paragraph{Path}
+In a probabilistic setting a path denotes a set of paths that are reachable through unique probabilistic strategies of Altruistic players and a strategy of Byzantine players. A path set can be denoted by $\{\pi\}$. A path set of length $k$ is denoted by $\{\pi|_k\}$
+The concept of a probabilistic path can be defined through the concept of probabilistic action.
+
+\paragraph{Strategy}
+
+Strategy is defined the same as in the previous section. The only difference is that all the strategies of an Altruistic player are assigned a probability. Strategies also appear as sets. $\forall path set \{\pi \}$
+there is a corresponding strategy set $\{\sigma \}$ for player $i$. 
+%\paragraph{Reachability}
+%Define a relation $nstate \subseteq S \times S$.
+%Let $s$ , $s'$ $\in S$.
+%$s$ nstate $s'$ $iff$ $ \exists a \in A$ s.t. $BT(Z,s,a,s')$.
+%So, we can define the relation $reaches \subseteq S \times S$
+%as $reaches $= $nstate^{+}$
+%It should be noted that these relations are defined for notational convenience and would not add more information to the finite state mechanism.
+%\paragraph{Probabilistic Value Function}
+% $vp_{i}^{k+1}(Z,s)$ and $up_{i}^{k+1}(Z,s)$ are defined for probabilistic states where, $s \in S_i$
+
+
+Hence, the probabilistic game is specified as $(S,I,A,B,T,h,P,\beta)$, where $P$ is newly added.
+
+
+
+%Here, $A_i^{1}(s)$ has the components of the probabilistic strategy of player $i$ at global state $s$.Probabilistic strategy is itself %a non deterministic choice of a player. The set of non deterministic choices for a player at a given global state has an unknown %probability distribution. However, when choosing the path with minimal or maximal path value, the above unknown probability %distribution becomes $<0,0,$..$,1,0,0>$ where $1$ is for the action which directs to the maximal/minimal path accordingly.
+
+%When given a global action we may need to filter out the players with probabilistic strategies and players who are not. First we %introduce an $n$-tuple of binary numbers where $1$ denotes a probabilistic strategy and $0$ denotes a non deterministic choice.
+
+%$r \in \{0,1\}^{n}  = (r_1,r_2,$...$,r_n)$.
+%We define two partitions $r^{0}(a,s)$ and $r^{1}(a,s)$.
+%$r^{0}(a,s) =\{i | a_i \in A_i^{0}(s)  \} $
+%$r^{1}(a,s) =\{i | a_i \in A_i^{1}(s)  \} $
+%Define $A^{r}(s)$ as $\phi A_i^{r_i}(s)$
+

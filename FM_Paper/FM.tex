@@ -1,0 +1,105 @@
+\documentclass[]{sig-alternate-05-2015}
+%\documentclass[12pt]{article}
+%\usepackage{proceed2e}
+%\usepackage[margin=1in]{geometry}
+%\usepackage{setspace} % list packages between braces
+%\onehalfspacing
+\usepackage{times}
+\usepackage{color}
+\usepackage{amsmath}
+%\usepackage[fleqn]{amsmath}
+\usepackage{amsfonts}
+%\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{algorithm,algorithmic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{mathtools}
+\usepackage{cuted}
+\usetikzlibrary{arrows,automata}
+
+%\documentclass[]{sig-alternate-05-2015}
+%%\usepackage{proceed2e}
+%\usepackage{times}
+%\usepackage{color}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{graphicx}
+%\usepackage{algorithm,algorithmic}
+%\usepackage{pgf}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows,automata}
+
+
+\newcommand*\xor{\mathbin{\oplus}}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\nd}[1]{{\color{red} nd: #1}} %comments made by naipeng
+\newcommand{\df}[1]{{\color{blue} df: #1}} %comments made by Dileepa
+\title{Model Checking Nash Equilibria in Probabilistic Games}
+\author{Dileepa Fernando\\ Supervisor - A/P Jin Song Dong \\ School of Computing, \\ National University of Singapore.}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Verifying whether rational participants in a probabilistic distributed system would deviate from the specified behaviour is an important but challenging task. We term this problem as verifying nash-equilibria in probabilistic cooperative distributed multi-player games.
+Existing algorithms only work for non-probabilistic systems. We develop a model checking algorithm for automatically verify nash-equilibria for probabilistic systems.
+The algorithm is implemented based on a model checker - PAT (Process Analysis Toolkit). Using the algorithm and our tool, we performed a case study on analysing the first probabilistic secret sharing scheme. Algorithm was evaluated by applying to a continuous task sharing scenario.
+\end{abstract}
+
+% \begin{CCSXML}
+%<ccs2012>
+%<concept>
+%<concept_id>10011007.10010940.10010992.10010998.10003791</concept_id>
+%<concept_desc>Software and its engineering~Model checking</concept_desc>
+%<concept_significance>500</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10002950.10003648</concept_id>
+%<concept_desc>Mathematics of computing~Probability and statistics</concept_desc>
+%<concept_significance>300</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10003752.10010070.10010099</concept_id>
+%<concept_desc>Theory of computation~Algorithmic game theory and mechanism design</concept_desc>
+%<concept_significance>300</concept_significance>
+%</concept>
+%<concept>
+%<concept_id>10002978.10003014.10003015</concept_id>
+%<concept_desc>Security and privacy~Security protoc4ols</concept_desc>
+%<concept_significance>100</concept_significance>
+%</concept>
+%</ccs2012>
+%\end{CCSXML}
+%
+%\ccsdesc[500]{Software and its engineering~Model checking}
+%\ccsdesc[300]{Mathematics of computing~Probability and statistics}
+%\ccsdesc[300]{Theory of computation~Algorithmic game theory and mechanism design}
+%\ccsdesc[100]{Security and privacy~Security protocols}
+%\printccsdesc
+%
+%\keywords{Model Checking; Nash Equilibria; Probabilistic Game; Contract Signing; Secret Sharing}
+%\input{Introduction_new}
+\input{introduction}
+\input{related_work}
+\input{old_version}
+\input{model-checking}
+\input{Contract_Signing}
+\input{Motivation}
+\input{Mechanism}
+%\input{prob_def}
+\input{Ex_stateM}
+\input{algorithm}
+\input{DP_algo}
+\input{shamir}
+\input{Evaluation}
+%\input{case_study}
+\input{conclusion}
+\bibliographystyle{abbrv}
+\bibliography{FM}
+\input{Appendix}
+\end{document}

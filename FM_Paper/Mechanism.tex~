@@ -1,0 +1,98 @@
+\section{ALGORITHM AND IMPLEMENTATIONS}
+
+%Our analysis consider the parallel synchronous systems. This means that all the nodes/players in the system perform their state %transitions at once. Distributed systems which perform protocol steps collectively (not strictly synchronous) can also be %
+%included in the above category. In this setting we have two kinds of players namely, Byzantine and Altruistic. 
+
+%A parallel synchronous system can be seen as a system which goes through state transitions. Each player performs a transition %to a local state based on his global state and the available actions from that global state. 
+
+As mentioned in the introduction, we consider distributed systems with multiple players who need to cooperate to achieve a goal. Games for such systems are inherently distributed with multi-players, rather than turn based. A system can be non-terminating, i.e., there are infinite executing steps for some players, for instance, a protocol (e.g., the case study) can be executed unbounded number of times. 
+
+Games are often represented in a normal form -- a matrix of players, strategies and payoffs, or in the extensive form -- a finite game tree specifying the sequences of actions. Such specification is no longer suitable when the game has infinite execution steps. To be able to model infinite games, we adopt the fine state mechanism representation defined in~\cite{MMS08} -- each player is specified as a finite state mechanism, potentially with loops. This allows us to specify an infinite execution steps  in a finite manner. 
+
+%In a game theory setting, actions of each player depends on the amount of information they have. Practically, a player may not %have full information about other player states and their actions.  But he should have sufficient information about the global %state to perform the state transition. This modeling and analysis happens in a third party point of view who can view all the %global information. We can draw a local finite state machine for each player to list out the possible actions and its local states. %However, this can be an under specification because, in some scenarios local state cannot decide whether it can perform an %action specified in the local finite state machine. 
+
+\subsection{SPECIFICATION}
+We first briefly introduce the adopted specifications in Section~\ref{ssec:pre}, and then explain in details the probabilistic extension in Section~\ref{ssec:prob_act}. Finally, we use an example to illustrate how a probabilistic system can be specified.
+
+\subsection{Preliminaries}\label{ssec:pre}
+We use the formalism of finite state mechanisms~\cite{MMS08} to model all possible local states and local actions of players. All players' local states and actions together form all possible global states and actions in a game. The probability to perform the actions will be added in Section~\ref{ssec:prob_act}.
+
+\paragraph{Formal Definition of Finite State Machine}
+%we assume there are $Z \subseteq n$ number of 
+
+Each player $i$ has a set of local states, denoted by $S_i$, a set of initial states, denoted by $I_i$, and a set of actions, denoted $A_i$. The global states in a game with $n$ players is the product of the local states of each player, i.e., $S= S_1 \times S_2 \times\cdots\times S_n$; the set of initial states is $I = I_1 \times I_2 \times\cdots \times I_n$; and the set of global actions is $A=$ $A_1 \times A_2 \times \cdots\times A_n$. 
+
+Function $B_i: S\times A_i\times S_i \rightarrow \mathbb{B}$ is used to specify the feasibility of player $i$ performing a action $a\in A_i$, which leads $i$'s local state to $s'\in S_i$, at a global state $s\in S$  -- if it is feasible, $B_i(s,a,s')$ is true, otherwise false. 
+The function $B_i$ is required to have two properties: \emph{serial} and \emph{deterministic}: 
+\begin{itemize}
+\item
+Serial property says that there is at least one action defined for each player at each global state, formally, 
+$\forall s \in S$, $\exists a \in A_i , \exists s' \in S_i$ s.t. $B_i(s,a,s \prime)$ is true;
+\item
+the deterministic property says that a player's action $a$ should lead to a unique resulting local state, formally $(B_i(s,a,s_1)=true \wedge B_i(s,a,s_2 )=true) \implies s_1 =s_2$.
+\end{itemize}
+Due to the deterministic property,  we simply write $B_i(s,a)$ to represent that action $a$ is valid in a global state $s$, since the local state $s'$ is uniquely defined. Similarly, the global possible actions of all players are $B = B_1\times B_2\times\cdots\times B_n$.
+
+%Using the above definitions, a  player's is defined as as a tuple $\langle S_i, I_i, A_i, B_i\rangle$. All players together actually form a game which is formally defined as the tuple $\langle S, I, A, B\rangle$. Note that adding probabilistic behavior does not change the actions and the states. Hence, we adopt this formalism and extend each action with a probability, see Section~\ref{ssec:prob}.
+
+In non-probabilistic systems,
+defining a player's all possible actions is the same as defining a Byzantine player who may perform any possible action at any global state, ignoring utility/rewards, i.e., $\langle S_i, I_i, A_i, B_i\rangle$ defines a Byzantine player. Byzantine players can be used to model the ``bad guys", for example, the Dolev-Yao attackers for security protocols. 
+%
+Recall that a system specifies which action should be performed at which state by which player. 
+Similar to $B_i$, function $T_i : S \times A_i \rightarrow \mathbb{B}$ specifies a player $i$'s behavior if he genuinely follows the system -- $T_i (s, a)=true$ ($s\in S$, $a\in A_i$) if $i$ shall perform $a$ at state $s$ according to the system. 
+Since following the system (honest player) is always part of the possible behavior, we have $T_i (s,a) \rightarrow B_i (s,a)$. In addition, we assume the system does not have unspecified situation or deadlocks. Formally, we require that $T_i$ is non-blocking (i.e. $\forall s \in S,  \exists a \in A_i$, s.t. $T_i(s,a)$). %Note that there can be multiple valid actions at a global state.
+  
+Since that function $T_i$ models the altruistic player's behavior, and $B_i$ models a Byzantine player's behavior, given a set of  Byzantine players (denoted as $Z$) among the total $n$ players, the behavior of all players in such a system is:
+%$BT$ (total function) would be, $BT : P([n]) \times S \times A \times S \rightarrow B $ 
+  \begin{equation*}
+  BT(Z,s,a_i,s')=
+  \begin{cases} 
+  B_i(s,a_i,s') &  i \in Z \\
+  B_i(s,a_i,s') \wedge T_i(s,a_i) & i \notin Z 
+  \end{cases}	
+  \end{equation*}
+
+A system specifies the honest players, formally specified as $T=\langle T_1, \cdots, T_n\rangle$. In probabilistic systems, in addition to the feasible actions, a probability is given to each action.  
+   
+ \paragraph{Payoff Function}
+Differing from Byzantine players and altruistic players, a rational player's behavior is driven by rewards, a.k.a. payoffs.
+Player $i$'s Payoff is defined as $h_i: S \times A \rightarrow \mathbb{R}$, i.e., for each global state transition and a global action, there is a payoff value for player $i$, denoted as numbers in $\mathbb{R}$. 
+%The issue is that, each global state and global action pair 
+%may not have a payoff defined because some actions can be attributed to states which they have no connection with.
+%   \cite{MMS08}Even though hi is defined for all the (global state, global action) pairs, in our setting, only useful information %would be given by the hi values defined for valid state transitions. Practically it may also not be meaningful to define pay-off %values for invalid state transitions. 
+Hence, $h = \langle h_1,\cdots,h_n\rangle$ denotes the payoff of all the $n$ players at any state for performing any action.
+The payoff function can be directly adopted since it is not influenced by adding probability.
+
+ \paragraph{Discount factor}
+Let $\beta = (\beta_1, \cdots, \beta_n )$ be the n-tuple of discount factors for the $n$ players, where $\beta_i \in (0,1)$. The discount factor is used to rank infinite sequences of actions (strategies), so that the relevance of rewards decreases in the future, to ensure efficient computation of a finite strategy in the settings of infinite games.
+
+\paragraph{Path}
+For a game $(S,I,A,B,T,h,\beta)$ with a Byzantine set $Z$, 
+a path is defined as a sequence of possible $(s,a)$ pairs where $s \in S$ and $a \in A$. We denote a path as $X= \langle X_0 , \cdots, X_n \cdots\rangle$, where each $X_t$ ($t\geq 0$) is a $(s,a)$ pair, and use $X_t^{(s)}$ to denote the first element -- the state $s$ and $X_t^{(a)}$ to denote the second element -- the action $a$. A path is valid if $\forall t$, $BT(Z,X_t^{(s)},X_t^{(a)},X_{t+1}^{(s)},X_{t+1}^{(a)})$ is true.
+% where $s_i(t)$ and $a_i(t)$ are the local state and local action at step $t$ in a path respectively. 
+%Extra notation can be introduced to extract local states and actions from global states and actions. 
+
+The utility of a player $i$ in a path is evaluated by adding up the discounted pay-off values along the path, formally, 
+$V_i(X)= \Sigma_{t=0}^{|X|-1}{\beta_i^{t} h_i(X_t^{(s)},X_t^{(a)})}$, where $|X|$ is the path length, which can be infinite. When the path length is infinite, $V_i(X)$ converges to an upper bound, because of $\beta_i$.
+
+
+$Path_k(s,Z)= \{X | X$ is a path in $(\mathcal{M},\mathcal{Z})$ and $|X| = k$ and $X_0^{s} = s\} $ 
+This set defines the paths of length $k$ which starts from state $s$.
+These paths can be filtered by the maximum cardinality of the set of Byzantine agent that is allowed. 
+$Path_k(s,f) = \cup_{|Z|\leq f}$ $Path_{k}(s,Z)$. When the path has infinite length, we can omit the subscript $k$.
+
+\paragraph{Strategy}
+
+Strategy of a player is a sequence of local actions of the player. 
+A strategy is valid if it agrees with a valid path, formally, 
+%The specification of the mechanism decides validity of a sequence.  A strategy can be denoted by $\sigma$. Agreement %between a strategy and a path describes how a local action sequence of a player become valid in a global setting.
+
+Mari et al.\cite{MMS08} provides definitions and algorithms to determine optimal path values for rational and altruistic players.
+
+The guaranteed outcome of a strategy $\sigma$ for a player $i$ in the presence of Byzantine player set ($Z$ $v_i^{k}$) at global state $s$ relates to the valid global state and global action sequence such that the value is minimum. Player i can choose the strategy with the maximum guaranteed outcome.\cite{MMS08} Minimum guaranteed outcome is used to evaluate the worst case out come of a non rational player. For convenience of writing we introduce the functions, $v_{i}^{k+1}(Z,s,a_i)$ and $u_{i}^{k+1}(Z,s,a_i)$
+\df{Defining another probabilistic value function as well}
+
+$vp_{i}^{k+1}(Z,s,a_i)$ and $up_{i}^{k+1}(Z,s,a_i)$ are defined for probabilistic states where, $s \in S_{pr}$
+
+Value and worst case outcome from a global state $s$ at horizon $k$ (for length $k$ paths) for player $i$ can be computed by a recursive definition.\cite{MMS08}. We introduce the extended algorithm to compute the value and worst case outcome when probabilistic strategies are present. 
+

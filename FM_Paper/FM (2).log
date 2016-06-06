@@ -1,0 +1,915 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.21)  12 MAR 2016 11:30
+entering extended mode
+**./fse.tex
+(fse.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+(sig-alternate-05-2015.cls
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\epsfig.
+sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+x.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+s.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.st
+y"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphic
+s.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdfte
+x.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwa
+rerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcm
+ds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count79
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+\epsfxsize=\dimen104
+\epsfysize=\dimen105
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb
+.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfont
+s.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.
+sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.
+sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.s
+ty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen106
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.s
+ty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen107
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.s
+ty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count80
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count81
+\leftroot@=\count82
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count83
+\DOTSCASE@=\count84
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count85
+\c@MaxMatrixCols=\count86
+\dotsspace@=\muskip10
+\c@parentequation=\count87
+\dspbrk@lvl=\count88
+\tag@help=\toks17
+\row@=\count89
+\column@=\count90
+\maxfields@=\count91
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+Document Class 'sig-alternate' <9th June '13>. Modified by G.K.M. Tobin/Gerry M
+urray/Boris Veytsman
+Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
+shivers@cs.cmu.edu, 4/93 by theobald@cs.mcgill.ca
+Excerpts were taken from (Journal Style) 'esub2acm.cls'.
+****** Bugs/comments/suggestions/technicalities to Gerry Murray -- murray@hq.ac
+m.org ******
+Questions on the style, SIGS policies, etc. to Adrienne Griscti griscti@acm.org
+
+\ACM@basesize=\count92
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\comment\comment.
+sty"
+\CommentStream=\write3
+ Excluding comment 'comment') Excluding comment 'CCSXML'
+\footheight=\dimen115
+\@maxsep=\dimen116
+\@dblmaxsep=\dimen117
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf
+.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+\aucount=\count93
+\originalaucount=\count94
+\auwidth=\dimen118
+\auskip=\dimen119
+\auskipcount=\count95
+\auskip=\dimen120
+\allauboxes=\dimen121
+\addauthors=\toks21
+\addauflag=\count96
+\subtitletext=\toks22
+\savesection=\count97
+\sectioncntr=\count98
+\c@figure=\count99
+\c@table=\count100
+\titleboxnotes=\toks23
+\titleboxnoteflag=\count101
+
+
+LaTeX Warning: You have requested document class `sig-alternate-05-2015',
+               but the document class provides `sig-alternate'.
+
+Document Class: sig-alternate 2013/05/12 v2.7 based on acmproc.cls V1.3 <Nov. 3
+0 '99>
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latexsym.st
+y"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+\@acmtitlebox=\box28
+\titlenotecount=\count102
+\tntoks=\toks24
+\tntokstwo=\toks25
+\tntoksthree=\toks26
+\tntoksfour=\toks27
+\tntoksfive=\toks28
+\catcount=\count103
+\copyrightnotice=\toks29
+\conf=\toks30
+\confinfo=\toks31
+\c@part=\count104
+\c@section=\count105
+\c@subsection=\count106
+\c@subsubsection=\count107
+\c@paragraph=\count108
+
+Using 'Abbrev' bibliography style
+LaTeX Info: Redefining \cite on input line 1408.
+\bibindent=\dimen122
+\colcntr=\count109
+\saveb@x=\box29
+\copyrtyr=\toks32
+\acmcopyr=\toks33
+\boilerplate=\toks34
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(acmcopyright.sty
+Package: acmcopyright 2014/06/29 v1.2 Copyright statemens for ACM classes
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.
+sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyva
+l.tex"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvuti
+ls.tex"
+\XKV@toks=\toks35
+\XKV@tempa@toks=\toks36
+)
+\XKV@depth=\count110
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)))
+\copyrightetc=\toks37
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+ ("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
+ ("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\times.sty
+"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
+ty"
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
+fg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithms\algor
+ithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count111
+\float@exts=\toks38
+\float@box=\box30
+\@float@everytoks=\toks39
+\@floatcapt=\box31
+) ("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.st
+y"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks40
+\c@algorithm=\count112
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithms\algor
+ithmic.sty"
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count113
+\c@ALC@line=\count114
+\c@ALC@rem=\count115
+\c@ALC@depth=\count116
+\ALC@tlm=\skip44
+\algorithmicindent=\skip45
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gf.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+frcs.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common.tex"
+\pgfutil@everybye=\toks41
+\pgfutil@tempdima=\dimen123
+\pgfutil@tempdimb=\dimen124
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common-lists.tex"))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-latex.def"
+\pgfutil@abb=\box32
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfrcs.code.tex"
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gfcore.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\systemlayer\
+pgfsys.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys.code.tex"
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks42
+\pgfkeys@temptoks=\toks43
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks44
+))
+\pgf@x=\dimen125
+\pgf@y=\dimen126
+\pgf@xa=\dimen127
+\pgf@ya=\dimen128
+\pgf@xb=\dimen129
+\pgf@yb=\dimen130
+\pgf@xc=\dimen131
+\pgf@yc=\dimen132
+\w@pgf@writea=\write4
+\r@pgf@reada=\read1
+\c@pgf@counta=\count117
+\c@pgf@countb=\count118
+\c@pgf@countc=\count119
+\c@pgf@countd=\count120
+\t@pgf@toka=\toks45
+\t@pgf@tokb=\toks46
+\t@pgf@tokc=\toks47
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgf.cfg"
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count121
+\pgfsyssoftpath@bigbuffer@items=\count122
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
+y"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.c
+fg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcore.code.tex"
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thcalc.code.tex"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thutil.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thparser.code.tex"
+\pgfmath@dimen=\dimen133
+\pgfmath@count=\count123
+\pgfmath@box=\box33
+\pgfmath@toks=\toks48
+\pgfmath@stack@operand=\toks49
+\pgfmath@stack@operation=\toks50
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.code.tex"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.basic.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.trigonometric.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.random.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.comparison.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.base.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.round.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.misc.code.tex")
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.integerarithmetics.code.tex")))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count124
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen134
+\pgf@picmaxx=\dimen135
+\pgf@picminy=\dimen136
+\pgf@picmaxy=\dimen137
+\pgf@pathminx=\dimen138
+\pgf@pathmaxx=\dimen139
+\pgf@pathminy=\dimen140
+\pgf@pathmaxy=\dimen141
+\pgf@xx=\dimen142
+\pgf@xy=\dimen143
+\pgf@yx=\dimen144
+\pgf@yy=\dimen145
+\pgf@zx=\dimen146
+\pgf@zy=\dimen147
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathconstruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen148
+\pgf@path@lasty=\dimen149
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen150
+\pgf@shorten@start@additional=\dimen151
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box34
+\pgf@hbox=\box35
+\pgf@layerbox@main=\box36
+\pgf@picture@serial@count=\count125
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen152
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen153
+\pgf@pt@y=\dimen154
+\pgf@pt@temp=\dimen155
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreobjects.code.tex"
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathprocessing.code.tex"
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen156
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen157
+\pgf@sys@shading@range@num=\count126
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreimage.code.tex"
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box37
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorelayers.code.tex"
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransparency.code.tex"
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepatterns.code.tex"
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box38
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen158
+\pgf@nodesepend=\dimen159
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlaye
+r\tikz.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+ffor.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+fkeys.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\math\pgfmath
+.sty"
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgffor.code.tex"
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex")
+\pgffor@iter=\dimen160
+\pgffor@skip=\dimen161
+\pgffor@stack=\toks51
+\pgffor@toks=\toks52
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\tikz.code.tex"
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryplothandlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count127
+\pgfplotmarksize=\dimen162
+)
+\tikz@lastx=\dimen163
+\tikz@lasty=\dimen164
+\tikz@lastxsaved=\dimen165
+\tikz@lastysaved=\dimen166
+\tikzleveldistance=\dimen167
+\tikzsiblingdistance=\dimen168
+\tikz@figbox=\box39
+\tikz@figbox@bg=\box40
+\tikz@tempbox=\box41
+\tikz@tempbox@bg=\box42
+\tikztreelevel=\count128
+\tikznumberofchildren=\count129
+\tikznumberofcurrentchild=\count130
+\tikz@fig@count=\count131
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count132
+\pgfmatrixcurrentcolumn=\count133
+\pgf@matrix@numberofcolumns=\count134
+)
+\tikz@expandcount=\count135
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibraryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryarrows.code.tex"
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen169
+))
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibraryautomata.code.tex"
+File: tikzlibraryautomata.code.tex 2008/07/14 v3.0.1a (rcs-revision 1.3)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibraryshapes.multipart.code.tex"
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+shapes\pgflibraryshapes.multipart.code.tex"
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box43
+\pgfnodeparttwobox=\box44
+\pgfnodepartthreebox=\box45
+\pgfnodepartfourbox=\box46
+\pgfnodeparttwentybox=\box47
+\pgfnodepartnineteenbox=\box48
+\pgfnodeparteighteenbox=\box49
+\pgfnodepartseventeenbox=\box50
+\pgfnodepartsixteenbox=\box51
+\pgfnodepartfifteenbox=\box52
+\pgfnodepartfourteenbox=\box53
+\pgfnodepartthirteenbox=\box54
+\pgfnodeparttwelvebox=\box55
+\pgfnodepartelevenbox=\box56
+\pgfnodeparttenbox=\box57
+\pgfnodepartninebox=\box58
+\pgfnodeparteightbox=\box59
+\pgfnodepartsevenbox=\box60
+\pgfnodepartsixbox=\box61
+\pgfnodepartfivebox=\box62
+)))
+\c@example=\count136
+ (fse.aux)
+\openout1 = `fse.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 28.
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count137
+\scratchdimen=\dimen170
+\scratchbox=\box63
+\nofMPsegments=\count138
+\nofMParguments=\count139
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen171
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
+\everyMPtoPDFconversion=\toks54
+) ABD: EveryShipout initializing macros
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 29.
+ ("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+Overfull \hbox (6.39897pt too wide) in paragraph at lines 32--36
+\T1/ptm/m/n/9 equilibria in prob-a-bilis-tic co-op-er-a-tive dis-tributed multi
+-player games.
+ []
+
+Excluding 'CCSXML' comment.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 66.
+
+("C:\Users\Dileepa\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd
+"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 66.
+
+Overfull \hbox (4.96452pt too wide) in paragraph at lines 66--67
+\OMS/cmsy/m/n/9 \T1/ptm/b/n/9 Software and its en-gi-neer-ing $\OMS/cmsy/m/n/9
+ !$ \T1/ptm/b/n/9 Model check-ing; \OMS/cmsy/m/n/9 \T1/ptm/b/n/9 Mathematics
+ []
+
+(introduction.tex
+Overfull \hbox (11.14299pt too wide) in paragraph at lines 12--14
+[]\T1/ptm/m/n/9 Automated model check-ing tools for games ex-ist, e.g., MOCHA [
+2],
+ []
+
+
+Overfull \hbox (2.85397pt too wide) in paragraph at lines 12--14
+\T1/ptm/m/n/9 in-volv-ing prob-a-bil-ity, for ex-am-ple, it is proved that non-
+probabilistic
+ []
+
+) (related_work.tex [1{C:/Users/Dileepa/AppData/Local/MiKTeX/2.9/pdftex/config/
+pdftex.map}
+
+
+]) (Mechanism.tex
+Overfull \hbox (2.40364pt too wide) in paragraph at lines 8--9
+\T1/ptm/m/n/9 tems with mul-ti-ple play-ers who need to co-op-er-ate in or-der 
+to achieve
+ []
+
+
+Overfull \hbox (3.64566pt too wide) in paragraph at lines 15--16
+[]\T1/ptm/m/n/9 We first briefly in-tro-duce the adopted spec-i-fi-ca-tions in 
+Sec-tion 3.1[],
+ []
+
+
+Overfull \hbox (2.15063pt too wide) in paragraph at lines 32--33
+\T1/ptm/m/n/9 lead to a unique re-sult-ing lo-cal state, for-mally $\OT1/cmr/m/
+n/9 (\OML/cmm/m/it/9 B[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 s; a; s[]\OT1/cmr/m/n/9
+ ) =$
+ []
+
+[2]) (prob_def.tex
+Overfull \hbox (6.90424pt too wide) in paragraph at lines 5--6
+\T1/ptm/m/n/9 present the cal-cu-la-tion of the value $\OML/cmm/m/it/9 v[]\OT1/
+cmr/m/n/9 (\OML/cmm/m/it/9 Z; s\OT1/cmr/m/n/9 )$ \T1/ptm/m/n/9 and worst value 
+$\OML/cmm/m/it/9 u[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 Z; s\OT1/cmr/m/n/9 )$
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Overfull \hbox (27.72462pt too wide) in paragraph at lines 116--118
+[]\T1/ptm/m/n/9 Hence, the prob-a-bilis-tic game is spec-i-fied as $\OT1/cmr/m/
+n/9 (\OML/cmm/m/it/9 S; I; A; B; T; h; P; PA\OT1/cmr/m/n/9 )$\T1/ptm/m/n/9 ,
+ []
+
+) (Ex_stateM.tex
+Overfull \hbox (7.5991pt too wide) in paragraph at lines 10--15
+$\OMS/cmsy/m/n/9 h\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 \OT1/cmr/m/n/9 (1\OML/cmm/m/
+it/9 ; \OT1/cmr/m/n/9 0)\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 0)\OML/cmm/m/it/9 ; []
+  ; \OT1/cmr/m/n/9 (\OML/cmm/m/it/9 \OT1/cmr/m/n/9 (\OML/cmm/m/it/9 n; \OT1/cm
+r/m/n/9 0)\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 0)\OMS/cmsy/m/n/9 i$ \T1/ptm/m/n/9 a
+nd $\OML/cmm/m/it/9 A \OT1/cmr/m/n/9 = \OMS/cmsy/m/n/9 ff\OML/cmm/m/it/9 a[]; a
+[]\OMS/cmsy/m/n/9 g\OML/cmm/m/it/9 ; []  ; \OMS/cmsy/m/n/9 f\OML/cmm/m/it/9 a[]
+; a[]\OMS/cmsy/m/n/9 gg$\T1/ptm/m/n/9 . 
+ []
+
+
+Overfull \hbox (11.10664pt too wide) detected at line 33
+[]
+ []
+
+[4]
+Overfull \hbox (15.15729pt too wide) detected at line 84
+\OML/cmm/m/it/9 P\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 Z; s; a[]\OT1/cmr/m/n/9 ) = []
+
+ []
+
+) (algorithm.tex
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+
+Overfull \hbox (32.68622pt too wide) in paragraph at lines 32--32
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--35
+
+ []
+
+
+Overfull \hbox (31.79485pt too wide) in paragraph at lines 50--50
+[] 
+ []
+
+
+Underfull \vbox (badness 1406) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Overfull \hbox (9.25027pt too wide) in paragraph at lines 59--61
+\T1/ptm/m/n/9 states. $\OML/cmm/m/it/9 vp[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 Z; s
+[]\OT1/cmr/m/n/9 ) = \OML/cmm/m/it/9 E[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 v[]\OT1
+/cmr/m/n/9 (\OML/cmm/m/it/9 Z; x\OT1/cmr/m/n/9 ))$ \T1/ptm/m/n/9 and $\OML/cmm/
+m/it/9 up[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 Z; s[]\OT1/cmr/m/n/9 ) =$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Overfull \hbox (5.45473pt too wide) in paragraph at lines 84--87
+[]\T1/ptm/m/n/9 Let $\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 S; I; B; T; h; P; \OT1/cm
+r/m/n/9 )$ \T1/ptm/m/n/9 is a mech-a-nism ($\OMS/cmsy/m/n/9 M$\T1/ptm/m/n/9 ) a
+nd $\OML/cmm/m/it/9 f \OMS/cmsy/m/n/9 2 f\OT1/cmr/m/n/9 0\OML/cmm/m/it/9 ; \OT1
+/cmr/m/n/9 1\OML/cmm/m/it/9 ;$\T1/ptm/m/n/9 ...$\OML/cmm/m/it/9 ; n\OMS/cmsy/m/
+n/9 g$
+ []
+
+) (DP_algo.tex) (shamir.tex [5]
+Overfull \hbox (3.08801pt too wide) in paragraph at lines 20--21
+\T1/ptm/m/n/9 sends it to player $\OML/cmm/m/it/9 i[]$\T1/ptm/m/n/9 . Cor-re-sp
+ond-ingly, $\OML/cmm/m/it/9 i$ \T1/ptm/m/n/9 re-ceives $\OML/cmm/m/it/9 c[] []$
+
+ []
+
+[6]
+Overfull \hbox (5.92293pt too wide) in paragraph at lines 35--36
+[]\T1/ptm/m/n/9 The above ran-dom-ized ver-sion of the shamir se-cret shar-ing 
+scheme
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+
+Overfull \hbox (3.76823pt too wide) in paragraph at lines 44--45
+[]\T1/ptm/m/n/9 send mes-sages to $\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 i[]$ \T1/ptm
+/m/n/9 and $\OML/cmm/m/it/9 i[]$\T1/ptm/m/n/9 . (since the mes-sages are boolea
+n,
+ []
+
+) (Evaluation.tex
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 4.
+
+) (conclusion.tex) (fse.bbl [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+) [8]
+(fse.aux) ) 
+Here is how much of TeX's memory you used:
+ 14222 strings out of 493634
+ 291078 string characters out of 3134423
+ 349793 words of memory out of 3000000
+ 17269 multiletter control sequences out of 15000+200000
+ 61619 words of font info for 72 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 48i,27n,68p,1510b,755s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+fontname/8r.enc}<C:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cmextra/cmex9.pfb><C:/Users/Dileepa/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Dileepa/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Dileep
+a/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C
+:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr5.pfb><C:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr6.pfb><C:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Dileepa/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Dileepa/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Dile
+epa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+<C:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb><C:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/urw/helvetic/uhvb8a.pfb><C:/Users/Dileepa/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Dileepa/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Dileepa/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on fse.pdf (8 pages, 226102 bytes).
+PDF statistics:
+ 93 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

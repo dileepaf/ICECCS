@@ -1,0 +1,83 @@
+\section{CASE STUDY: ANALYZING A PROBABILISTIC SECRET SHARING SCHEME}
+
+we performed a case study on a probabilistic secret sharing scheme~\cite{HT04} by modelling according to the proposed probabilistic approach in section \ref{ssec:prob_act} with some protocol specific improvements.
+
+\emph{Secret sharing} is a way for a group of users to share a \emph{secret}: the secret is distributed among the group members, such that each member has a \emph{share} of the secret; and the secret can only be reconstructed with a sufficient number of shares. In other words, the secret is kept confidential, even in the presence of a limited number of traitors (compromised members or non-cooperating members who prevent the reconstruction of the secret). This property makes secret sharing an ideal scheme for storing high sensitive informations, such as encryption keys and launch codes. In the parametric form, a $n\mbox{-}m$ ($n\geq m$) secret sharing ensures that it requires at least $m$ honest players to reconstruct the secret within a group of $n$ players. In other words, less than $m$ compromised players together cannot reconstruct the secret; and less than $n-m$ non-cooperating members together cannot stop the honest players to reconstruct of the secret.
+
+The most well-known secret sharing scheme is the Shamir's secret sharing~\cite{Shamir79}. However, the scheme does not work when the players are \emph{rational} -- a player follows the protocol only if it increases his utility. It is shown that a rational player will not share his secret with anyone else. ~\cite{HT04}.  In fact, it is proved that in general, in all practical mechanisms for shared-secret reconstruction with an upper bound on the running time, the best strategy for each rational player is doing nothing~\cite{HT04}. Hence, a randomized mechanism (the probabilistic secret sharing scheme) is proposed to ensure that rational players would reveal their shares to reconstruct the secret, i.e., achieving a Nash-Equilibrium with a constant expected running time. 
+
+The probabilistic scheme is a $3\mbox{-}3$ secret sharing\footnote{A general $n\mbox{-}m$ secret sharing is considered as variations of the basic $3\mbox{-}3$ secret sharing (for details, see~\cite{HT04})}. 
+Given the $3$ players, we index each player is indexed with a distinct number in $\{1, 2, 3\}$. We use $i$ to denote one player, then the other two players are $(i+1)\%3$, denoted as $i^+$, and $(i-1)\%3$, denoted as $i^-$. There is an issuer who assign each player a share of secret. Assuming the share cannot be changed; for example, it is signed by the issuer.
+The scheme works as follows.
+\begin{enumerate}
+\item Each player $i$
+\begin{itemize}
+\item chooses a bit $c_i$ ($c_i$ can only be $1$ or $0$) such that $c_i =1$ with probability $\alpha$ and $c_i = 0$ with probability $1-\alpha$; 
+\item chooses a bit $c_{(i,+)}$ ($c_{(i,+)}$ can only be $1$ or $0$) randomly, so that $c_{(i,+)}=1$ with probability $1/2$ and $c_{(i,+)}=0$ with probability $1/2$;
+\item calculates $c_{(i,-)}= c_i \xor c_{(i,+)}$. 
+\end{itemize}
+Then player $i$ sends the bit $c_{(i,+)}$ to player $i^+$ and sends the bit $c_{(i,-)}$ to player $i^-$. This means that the player $i$ receives a bit $c_{(i^+,-)}$ from player $i^+$ and a bit $c_{(i^-,+)}$ from player $i^-$.
+\item On receiving $c_{(i^+,-)}$, player $i$ computes $c_{(i^+,-)} \xor c_i$ and sends it to player $i^-$. Correspondingly, $i$ receives $c_{((i^+)^+, -)} \xor c_{i^+}$ from $i^+$. Since there are only $3$ players, player $(i^+)^+$ is the player $i^-$. Hence $c_{((i^+)^+, -)} \xor c_{i^+}=c_{(i^-,-)} \xor c_{i^+}$.
+\item When receiving both $c_{(i^-,+)}$ from player $i^-$ (step 1) and receiving $c_{(i^-,-)} \xor c_{i^+}$ from $i^+$ (step 2), $i$ computes $p = c_{(i^-,+)} \xor (c_{(i^-,-)}\xor c_{i^+})\xor c_i$. Note that $ c_{(i^-,+)} \xor (c_{(i^-,-)}\xor c_{i^+})\xor c_i=c_{i^-} \xor c_{i^+}\xor c_i$, i.e., $p=c_1 \xor c_2 \xor c_3$ (It holds for all players).
+If $p = c_i = 1$ then player $i$ sends his share to the others.
+\item Depending on the value of $p$ and $c_i$, player $i$ decides whether to send his share.
+\begin{itemize}
+\item If $p=1$, $i$ receives $3$ shares, then he construct the secret.
+\item If $p =0$ and $i$ received no secret shares, or if $p =1$ and $i$ received exactly one share (possibly from itself; that is, we allow the case that $i$ did not receive any shares from other players but sent its own), the issuer restarts the protocol. 
+\item Otherwise, player $i$ stops the protocol. Because someone must have been cheating. 
+\end{itemize}
+The intuition behind the last step is as follows: When $p=0$, no one should send his share; and thus $i$ receives no secret share. Otherwise, some one calculated wrong (cheating).
+When $p=1$ either $c_i=c_{i^+}=c_{i^-}=1$ or there exists exactly one player chooses $1$, i.e., $c_i=c_{i^+}=0$ and $c_{i^-}=1$, $c_i=c_{i^-}=0$ and $c_{i^+}=1$, or $c_{i^+}=c_{i^-}=0$ and $c_i=1$. 
+In the former case, each player can construct the secret. In the later case, $i$ should receive exactly one share. Otherwise, some player calculated wrong (cheating). 
+\end{enumerate}
+
+\paragraph{Model}
+The above randomized version of the shamir secret sharing scheme can be modelled with the probabilistic extension proposed.\newline
+
+Here, we assume that message channels are secure and sender's authenticity is preserved.
+The above protocol is a deterministic protocol where at each step an honest player has to perform a single predefined task(may be probabilistic), depending on the global state he/she is in. This scenario has a unique initial global state. Let's say player $i$'s initial state is $s_{i0}$. The initial global state is is unique here so that, $I=\{(s_{10},s_{20},s_{30}) \}$.
+Let's have a look at their Byzantine behaviours starting from the initial state.
+ 
+ \begin{enumerate}
+ 	\item Player $i$'s probabilistic action to choose $c_i$. $c_i=1$ with probability $\alpha$. 
+ 	\item choose $c_{i^+}$ with $0.5$ probability.
+ 	\item send messages to $(i^{+}$ and $i^{-}$. (since the messages are boolean, player has four different actions )
+ 	\item send 'xor' to player $i^{-}$. (two options - sending correct one or incorrect one)
+ 	\item send or not send the messages to player $i^-$ and $i^+$. (total four possibilities)
+ 	\item restart the protocol
+ \end{enumerate}
+ The above actions sets are activated in different levels. For example, first action set starts from the initial state.
+ 
+ \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+ semithick]
+ \tikzstyle{every state}=[fill=black,draw=none,text=white]
+ \node[initial,state] (A)                    {$q_1$};
+ \node[state]         (B) [above right of=A] {$q_2$};
+ \node[state]         (C) [below right of=A] {$q_3$};
+ 
+ \path (A) edge              node {$\alpha$,$c_i=1$} (B)
+ edge              node {$1-\alpha$,$c_i=0$} (C);
+ \end{tikzpicture}
+ 
+ Second action is, sending two other players two random values calculated. For a Byzantine player there are four possibilities. In the diagram possibilities for sending different binary values to two remaining players is shown.
+ 
+ \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+ semithick]
+ \tikzstyle{every state}=[fill=black,draw=none,text=white]
+ \node[initial,state] (A)                    {$q_1$};
+ \node[state]         (B) [above of =A] {$q_2$};
+ \node[state]         (C) [above right of=A] {$q_3$};
+ \node[state]         (D) [below right of=A] {$q_4$};
+ \node[state]         (E) [below of =A] {$q_5$};
+ 
+ \path (A) edge              node {1,0} (B)
+ edge              node {0,1} (C)
+ edge              node {0,0} (D)
+ edge              node {1,1} (E);
+ \end{tikzpicture}
+ 
+ In this example, the set $Z=\{\}$ so that each player is either Altruistic or Rational. The pay-off function is only defined for actions which end in terminal states. For all other actions pay-off is simply $0$. Let the value $\beta_i=1$ $\forall i$ (which is a deviation from the proposed approach) For any infinite length path, the value function would always be a finite value. As a result, discount factor is not essential here. Possible values of the value functions according to these reductions would be an expected utility value under some non-deterministic choice. Then the probabilistic path for maximum utility is same as the path for maximum value in this model.
+ Terminal actions are the actions where at least one player learns the secret. In all the other actions, the transition state would be the initial state itself.\\
+ The protocol was modelled in PAT  to verify the reaching probabilities of each terminal state. It was verified that the protocol is a Nash equilibrium when $\alpha_i=0.3 \text{ for each }i$.
+%We have modelled this mechanism in PAT for $3$ out of $3$ secret sharing case and verified the expected running times, %generated attack traces and verified attack probabilities. In this work they have general utility values for scenarios ui(only $i$ %knows the secret), ui (everyone knows the secret) and ui (no one knows the secret) such that 
+%$u_i(only $i$ knows the secret) > u_i (everyone knows the secret)> u_i (no one knows the secret)$. Even though players have %no incentive to cheat and violate the protocol in the long run (when α is chosen carefully). PAT model checker, extended with %Nash equilibrium verifier proves that the protocol is rational. 

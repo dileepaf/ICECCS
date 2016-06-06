@@ -1,0 +1,9 @@
+\subsection{Model Checking}
+
+It is essential to validate a software system against its requirement specification. For complex systems, these properties has to be verified before the system development. Requirements can be mathematically defined as properties while actual systems can be presented as mathematical models \cite{BK08}. Different system behaviours are referred to as models and the property verification procedure is called ``Model checking".
+\newline
+The properties to verify include deadlock freeness, starvation freeness, etc. Some systems may allow some degree of misfunctionality. By using model checking algorithms we can find/verify the error bounds, maximum error probability, etc. Properties can be categorized into safety properties and liveliness properties. NASA's deep space-$1$ space craft and validation of the execution engine of the core TM i$7$ processor\cite{KGNT09} are some of the successful usages of model checking.
+\newline
+The first step of model checking procedure is to specify the system model and the property to be verified in the language of model checking. Then simulations can be performed to have some confidence about the operation of the system model. Next step is to check whether the property is satisfied by the system. If the property does not hold then model checking tool can  generate a counter example. Based on the counter example, the system model can be refined iteratively until the property holds.
+\newline
+A major challenge of model checking is state space explosion in real time system models. Researchers in model checking have been working on reducing the state space by using various abstraction techniques such as binary decision diagrams\cite{MMS08} and partial order reduction\cite{alur1997partial}. These abstractions can be application specific or generic. Abstractions may also be property specific. 

@@ -1,0 +1,93 @@
+
+ 
+
+ 
+
+\section{VERIFICATION ALGORITHM}
+\label{sec: verification_algo}
+We are going to verify the Nash Equilibrium of synchronous parallel finite state mechanisms. In order to define the equilibrium we should define a utility function with respect to the execution of the protocol. The concepts of $path$ and $strategy$ has to be used in order to define utility.
+
+
+%We ca
+%The above set outputs a set of global actions which has the exact same set of non deterministic local actions as $a$ and all the other local actions are probabilistic actions. The set enumerates on all the possible probabilistic local action by keeping the non deterministic local actions in $a$ constant. We can use this set to find the expected path values when the set of non deterministic actions is specified.
+
+The dynamic programming algorithm to evaluate the value and the guaranteed outcome at horizon $k$ for player $i$ from a global state $s$ is as follows.
+
+
+$v_{i}^{0}(Z,s) = u_{i}^{0}(Z,s) =0 $ \cite{MMS08} \newline
+
+\begin{equation}
+\begin{split}
+v_{i}^{k+1}(Z,s)=
+\begin{cases}
+i \in Z &
+\\max _{a_i \in A_i(s)}\{
+min_{a_{Z-\{i\}} \in A_{Z-\{i\}}}\{
+\\E_{a_{[n]-Z} \in A_{[n]-Z}(s)} (h_i(s,\langle a_{z-\{i\}},a_i,a_{[n]-Z} \rangle) +\\ \beta_i{v_i}^{k}(Z,s') | BT(Z,s,\langle a_{-i},a_i \rangle,s')  ) \} \}\\
+i \notin Z &
+\\E_{a_i \in A_i(s)}(min _{a_{Z} \in A_{Z}(s)}\{
+\\E_{a_{[n]-Z-\{i\}} \in A_{a_{[n]-Z-\{i\}}}}( h_i(s,\langle a_{[n]-Z-\{i\}},a_{Z},a_i \rangle) +\\ \beta_i{v_i}^{k}(Z,s') | BT(Z,s,\langle a_{-i},a_i \rangle,s') )\} ) 
+\end{cases}
+\end{split}
+\end{equation}
+
+ 
+\begin{equation}
+\begin{split}
+u_{i}^{k+1}(Z,s)=
+\begin{cases}
+i \in Z &
+\\min _{a_i \in A_i(s)} \{
+min_{a_{Z-\{i\}} \in A_{Z-\{i\}}}\{
+\\E_{a_{[n]-Z} \in A_{[n]-Z}(s)} (h_i(s,\langle a_{z-\{i\}},a_i,a_{[n]-Z} \rangle) +\\ \beta_i{u_i}^{k}(Z,s') | BT(Z,s,\langle a_{-i},a_i \rangle,s')  )\} \}\\
+i \notin Z &
+\\E_{a_i \in A_i(s)} (
+min _{a_{Z} \in A_{Z}(s)}\{
+ \\E_{a_{[n]-Z-\{i\}} \in A_{a_{[n]-Z-\{i\}}}} (h_i(s,\langle a_{[n]-Z-\{i\}},a_{Z},a_i \rangle) + \\ \beta_i{u_i}^{k}(Z,s') | BT(Z,s,\langle a_{-i},a_i \rangle,s')  )\} )
+\end{cases}
+\end{split}
+\end{equation}
+
+In the probabilistic setting, value functions for individual paths become value functions for  path tree from some state. $v_i(\{\pi\})$ and $v_i(\{\pi|k\})$ represent value of the player $i$ in path tree $\{\pi\}$ and the value of length $k$ horizon of path tree $\{\pi\}$  
+
+%$\forall s_i \in S_i$, $ \exists s_{pr} \in S_{pr}$ s.t. $\forall t \in S_{pr} , t_i=s_i$
+
+%Probabilistic state for $s_i \in S_i$ can be defined as, \newline
+%
+%$PS(s_i)=\{t | t \in S \wedge t_i=s_i \wedge \exists s_0 \in I , s0$ reaches $t \}$
+%
+%Now we can define the values of the game in terms of player $i$'s states.
+%$vp_{i}^{k+1}(Z,s_i)= E_{x \in PS(s_i)}(v_{i}^{k+1}(Z,x))$ and $up_{i}^{k+1}(Z,s_i)=E_{x \in PS(s_i)}(u_{i}^{k+1}(Z,x))$
+
+%\df{The above equation is finalized. Calculation of probability of reaching states is handled follows. Consistency of the symbols have to be checked }
+
+
+%$v_{i}^{0}(Z,s) = u_{i}^{0}(Z,s) =0 $ \cite{MMS08} \newline
+%$\forall a_i \in A_i $, \newline
+%$v_{i}^{k+1}(Z,s,a_i) = min\{\Sigma_{r \in \{0,1\}^{n} } \Sigma_{\Theta \in EP(r,s,i)} \Sigma_{{a_{-i}} \in \Theta}$ $ \Pi_{q \neq i}$ $P(s,a_q)\{ h_i(s,<a_{-i},a_i>)  + \beta_iv_i^{k}(Z,s')  | BT(Z,s,<a_{-i},a_i>)\} \}$\newline
+%$v_{i}^{k+1}(Z,s)=$\newline
+%$max \{ \Sigma_{a_i \in A_i^{1}(s)} v_{i}^{k+1}(Z,s,a_i),$\newline
+%$ max _{a_i \in A_i^{0}(s)}\{v_{i}^{k+1}(Z,s,a_i) \} \}$\newline
+%
+%$u_{i}^{k+1}(Z,s,a_i) = min\{\Sigma_{r \in \{0,1\}^{n} } \Sigma_{\Theta \in EP(r,s,i)} \Sigma_{{a_{-i}} \in \Theta}$ $ \Pi_{q \neq i}$ $P(s,a_q)\{ h_i(s,<a_{-i},a_i>)  + \beta_iu_i^{k}(Z,s')  | BT(Z,s,<a_{-i},a_i>)\} \}$\newline
+%$u_{i}^{k+1}(Z,s)=$\newline
+%$min \{ \Sigma_{a_i \in A_i^{1}(s)} u_{i}^{k+1}(Z,s,a_i),$\newline
+%$ min _{a_i \in A_i^{0}(s)}\{u_{i}^{k+1}(Z,s,a_i) \} \}$
+
+
+
+To determine $v^{k}_i(Z,s)$ at a global state $s$, we should consider all the globally valid local actions for player $i$. For each of these actions, Byzantine players can choose a combination of actions which minimize the expected pay-off for player $i$. Player $i$ can calculate the maxi-min value to choose his rational action. Similarly, for $u^{k}_i(Z,s)$ player $i$ can calculate the minimin value which defines his least profitable move by playing honestly. We can see the proofs for correctness of this dynamic programming definition later.
+
+Now, we are ready to define $\epsilon-\chi$ Nash Equilibrium.
+
+\begin{definition}
+Let $(S,I,B,T,h,P,\beta)$ is a mechanism ($\mathcal{M}$) and $\chi \in \{0, 1, $...$,n\} $ and $\epsilon > 0$. ($\mathcal{M}$) is a $\epsilon-\chi$ Nash-Equilibrium  for player $i \in [n]$ \newline
+\begin{center}
+	\text{if } $\forall Z \in \mathcal{P}_{\chi}([n]-\{i\}), \forall s \in \mathcal{I}_i, \newline
+	u_{i}(Z,s) + \epsilon \geq v_{i}(Z \cup \{i\},s)$.
+	\end{center}
+	
+\end{definition}
+\cite{MMS08}
+
+The meaning of the above definition is that player $i$ has a Nash Equilibrium if the worst case value (when $i$ is altruistic) obtained among the infinite length paths starting from initial states is at most less than $\epsilon$ to the optimal value obtained by $i$, playing rationally.
